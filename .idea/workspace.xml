@@ -5,276 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="106a425a-b53c-4c04-9507-944914bf38ef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/clear-business-suite.local.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clear-business-suite.local.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_01_05_2023__17_50.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminIndexController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticatedSessionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PaymentMethods.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PaymentStatus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserDetails.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/Head/tinymceConfig.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/application-logo.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/menuLogoutForm.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/sweetalert.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_01_145214_create_permission_tables.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_01_153046_create_user_details_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_01_153342_create_payment_methods_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_01_154307_create_payment_statuses_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/AdminSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PaymentMethodSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/PaymentStatusSeeder.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/admin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/client.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/staff.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/sitewide.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/staff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/icons/default/icons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/icons/default/icons.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/icons/default/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/license.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/models/dom/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/models/dom/model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/models/dom/model.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/advlist/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/advlist/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/advlist/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/anchor/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/anchor/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/anchor/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autolink/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autolink/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autolink/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autoresize/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autoresize/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autoresize/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autosave/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autosave/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/autosave/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/charmap/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/charmap/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/charmap/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/code/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/code/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/code/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/codesample/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/codesample/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/codesample/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/directionality/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/directionality/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/directionality/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/js/emojiimages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/js/emojiimages.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/js/emojis.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/js/emojis.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/emoticons/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/fullscreen/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/fullscreen/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/fullscreen/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/help/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/help/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/help/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/image/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/image/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/image/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/importcss/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/importcss/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/importcss/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/insertdatetime/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/insertdatetime/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/insertdatetime/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/link/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/link/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/link/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/lists/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/lists/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/lists/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/media/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/media/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/media/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/nonbreaking/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/nonbreaking/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/nonbreaking/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/pagebreak/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/pagebreak/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/pagebreak/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/preview/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/preview/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/preview/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/quickbars/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/quickbars/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/quickbars/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/save/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/save/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/save/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/searchreplace/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/searchreplace/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/searchreplace/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/table/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/table/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/table/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/template/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/template/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/template/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/visualblocks/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/visualblocks/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/visualblocks/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/visualchars/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/visualchars/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/visualchars/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/wordcount/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/wordcount/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/plugins/wordcount/plugin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/dark/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/dark/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/default/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/default/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/document/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/document/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/tinymce-5-dark/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/tinymce-5-dark/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/tinymce-5/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/tinymce-5/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/writer/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/content/writer/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/content.inline.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/content.inline.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/skin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/skin.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/content.inline.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/content.inline.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/skin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/skin.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/skin.shadowdom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/oxide/skin.shadowdom.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/content.inline.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/content.inline.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/skin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/skin.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/skin.shadowdom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5-dark/skin.shadowdom.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/content.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/content.inline.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/content.inline.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/content.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/skin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/skin.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/skin.shadowdom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/skins/ui/tinymce-5/skin.shadowdom.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/themes/silver/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/themes/silver/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/themes/silver/theme.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/tinymce.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/tinymce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/tinymce/tinymce.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/sweetalert/sweetalert.all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-brands-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-brands-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-regular-400.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-regular-400.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-solid-900.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-solid-900.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-v4compatibility.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/webfonts/fa-v4compatibility.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/admin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/sitewide.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/js/staff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/admin.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/client.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/staff.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/main.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/menus/topbarMainMenu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/menus/topbarSecondryMenu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/main.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/layouts/topbar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/application-logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/application-logo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/head/tinymce-config.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/menu-logout-form.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/client.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/lead.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/staff.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lead/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lead/layouts/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lead/layouts/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lead/layouts/main.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lead/layouts/sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lead/layouts/topbar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/staff/dashboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/staff/layouts/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/staff/layouts/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/staff/layouts/main.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/staff/layouts/sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/staff/layouts/topbar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/sweetalert/alert.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -404,6 +147,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/backtrace" />
       <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
     </include_path>
   </component>
   <component name="ProjectId" id="2PCuBch5ZSwHoBiMj9G3DHvscXY" />
@@ -424,6 +168,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/assets" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -438,7 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682973249438</updated>
-      <workItem from="1682973250606" duration="680000" />
+      <workItem from="1682973250606" duration="3088000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return redirect('login');
 });
+
+//Admin & Super Admin Routes
+Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('admin')->group(function(){
+    //Main Dashboard Route
+   Route::get('dashboard', [AdminIndexController::class, 'index'])->name('dashboard');
+
+   //Clients Routes
+
+
+});
+
+//Staff Routes
+Route::middleware(['auth', 'role:staff'])->name('staff.')->prefix('staff')->group(function(){
+
+});
+
+//Client Routes
+Route::middleware(['auth', 'role:client'])->name('client.')->prefix('client')->group(function(){
+
+});
+
+//Lead Routes
+Route::middleware(['auth', 'role:lead'])->name('lead.')->prefix('lead')->group(function(){
+
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
