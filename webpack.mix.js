@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,10 +12,22 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/assetsjs')
-
+mix.js('resources/assets/js/app.js', 'public/assets/js')
+    .js('resources/assets/js/client.js', 'public/assets/js')
+    .js('resources/assets/js/sitewide.js', 'public/assets/js')
+    .js('resources/assets/js/staff.js', 'public/assets/js')
+    .sass('resources/assets/sass/app.scss', 'public/assets/css')
+    .sass('resources/assets/sass/admin.scss', 'public/assets/css')
+    .sass('resources/assets/sass/client.scss', 'public/assets/css')
+    .sass('resources/assets/sass/sitewide.scss', 'public/assets/css')
+    .sass('resources/assets/sass/staff.scss', 'public/assets/css')
+    .options({
+        processCssUrls: false,
+        postCss: [tailwindcss('./tailwind.config.js')],
+    })
     .copy(
         'node_modules/@fortawesome/fontawesome-free/webfonts',
         'public/webfonts'
     )
+    .copyDirectory('vendor/tinymce/tinymce', 'public/assets/js/tinymce')
 ;
