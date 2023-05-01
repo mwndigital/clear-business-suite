@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6b1db37007b3317cde71b8ae88e3e518",
+    "content-hash": "59adf62f1df86f91ff944daaaef4b281",
     "packages": [
         {
             "name": "brick/math",
@@ -978,6 +978,63 @@
             "time": "2021-10-07T12:57:01+00:00"
         },
         {
+            "name": "laravel/breeze",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "e98e855ab4bde5bf0083c4a4d73c0f5b474241ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/e98e855ab4bde5bf0083c4a4d73c0f5b474241ae",
+                "reference": "e98e855ab4bde5bf0083c4a4d73c0f5b474241ae",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^8.42|^9.0",
+                "illuminate/support": "^8.42|^9.0",
+                "illuminate/validation": "^8.42|^9.0",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2022-06-28T11:52:06+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v9.52.7",
             "source": {
@@ -1367,68 +1424,6 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.8.1"
             },
             "time": "2023-02-15T16:40:09+00:00"
-        },
-        {
-            "name": "laravel/ui",
-            "version": "v4.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/ui.git",
-                "reference": "05ff7ac1eb55e2dfd10edcfb18c953684d693907"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/05ff7ac1eb55e2dfd10edcfb18c953684d693907",
-                "reference": "05ff7ac1eb55e2dfd10edcfb18c953684d693907",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/console": "^9.21|^10.0",
-                "illuminate/filesystem": "^9.21|^10.0",
-                "illuminate/support": "^9.21|^10.0",
-                "illuminate/validation": "^9.21|^10.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^7.0|^8.0",
-                "phpunit/phpunit": "^9.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Laravel\\Ui\\UiServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Laravel\\Ui\\": "src/",
-                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel UI utilities and presets.",
-            "keywords": [
-                "laravel",
-                "ui"
-            ],
-            "support": {
-                "source": "https://github.com/laravel/ui/tree/v4.2.1"
-            },
-            "time": "2023-02-17T09:17:24+00:00"
         },
         {
             "name": "league/commonmark",
@@ -2995,96 +2990,6 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
-        },
-        {
-            "name": "realrashid/sweet-alert",
-            "version": "v7.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/realrashid/sweet-alert.git",
-                "reference": "81eb61745002b7fbe2276cbb64214f678584df5c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/81eb61745002b7fbe2276cbb64214f678584df5c",
-                "reference": "81eb61745002b7fbe2276cbb64214f678584df5c",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^5.6|^6.0|^7.0|^8.0|^9.0|^9.11|9.14.*|^10.0",
-                "php": "^7.2|^8.0|^8.1"
-            },
-            "require-dev": {
-                "symfony/thanks": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "RealRashid\\SweetAlert\\SweetAlertServiceProvider"
-                    ],
-                    "aliases": {
-                        "Alert": "RealRashid\\SweetAlert\\Facades\\Alert"
-                    }
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "RealRashid\\SweetAlert\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rashid Ali",
-                    "email": "realrashid05@gmail.com",
-                    "homepage": "https://realrashid.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel Sweet Alert Is A Package For Laravel Provides An Easy Way To Display Alert Messages Using The SweetAlert2 Library.",
-            "homepage": "https://github.com/realrashid/sweet-alert",
-            "keywords": [
-                "alert",
-                "laravel",
-                "laravel-package",
-                "notifier",
-                "noty",
-                "sweet-alert",
-                "sweet-alert2",
-                "toast"
-            ],
-            "support": {
-                "docs": "https://realrashid.github.io/sweet-alert/",
-                "email": "realrashid05@gmail.com",
-                "issues": "https://github.com/realrashid/sweet-alert/issues",
-                "source": "https://github.com/realrashid/sweet-alert"
-            },
-            "funding": [
-                {
-                    "url": "https://ko-fi.com/realrashid",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.buymeacoffee.com/realrashid",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://issuehunt.io/r/realrashid",
-                    "type": "issuehunt"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/realrashid/sweet-alert",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2023-04-20T01:23:24+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -5415,65 +5320,6 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.6"
             },
             "time": "2023-01-03T09:29:04+00:00"
-        },
-        {
-            "name": "tinymce/tinymce",
-            "version": "6.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tinymce/tinymce-dist.git",
-                "reference": "6a37da4822eebcd2706793454b07bd891c5277a8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/6a37da4822eebcd2706793454b07bd891c5277a8",
-                "reference": "6a37da4822eebcd2706793454b07bd891c5277a8",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "tinymce.js",
-                        "plugins/*/plugin.js",
-                        "themes/*/theme.js",
-                        "models/*/model.js",
-                        "icons/*/icons.js"
-                    ],
-                    "files": [
-                        "tinymce.min.js",
-                        "plugins/*/plugin.min.js",
-                        "themes/*/theme.min.js",
-                        "models/*/model.min.js",
-                        "skins/**",
-                        "icons/*/icons.min.js"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT-only"
-            ],
-            "description": "Web based JavaScript HTML WYSIWYG editor control.",
-            "homepage": "https://www.tiny.cloud/",
-            "keywords": [
-                "contenteditable",
-                "editing",
-                "html",
-                "javascript",
-                "rich editor",
-                "rich text",
-                "rich text editor",
-                "richtext",
-                "rte",
-                "text",
-                "tinymce",
-                "wysiwyg"
-            ],
-            "support": {
-                "source": "https://github.com/tinymce/tinymce-dist/tree/6.4.2"
-            },
-            "time": "2023-04-26T10:48:15+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

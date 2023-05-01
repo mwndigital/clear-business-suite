@@ -21,9 +21,9 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
+        'status',
         'email',
         'password',
-        'status',
     ];
 
     /**
@@ -44,8 +44,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function userDetail(){
-        return $this->hasOne(UserDetails::class);
-    }
 }

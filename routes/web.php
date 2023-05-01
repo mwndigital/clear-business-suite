@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,26 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Admin & Super Admin Routes
-Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('admin')->group(function(){
-   Route::get('dashboard', [AdminIndexController::class, 'index'])->name('dashboard');
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-//Staff Routes
-Route::middleware(['auth', 'role:staff'])->name('staff.')->prefix('staff')->group(function(){
-
-});
-
-//Client Routes
-Route::middleware(['auth', 'role:client'])->name('client.')->prefix('client')->group(function(){
-
-});
-
-//Lead Routes
-Route::middleware(['auth', 'role:lead'])->name('lead.')->prefix('lead')->group(function(){
-
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+require __DIR__.'/auth.php';

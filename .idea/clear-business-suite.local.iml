@@ -55,7 +55,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/sanctum" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/sail" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
@@ -116,9 +115,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-ignition" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/ignition" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/backtrace" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/breeze" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-permission" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/realrashid/sweet-alert" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/tinymce/tinymce" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

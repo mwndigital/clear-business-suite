@@ -60,7 +60,6 @@
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
-      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/laravel/sail" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
@@ -121,9 +120,8 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-ignition" />
       <path value="$PROJECT_DIR$/vendor/spatie/ignition" />
       <path value="$PROJECT_DIR$/vendor/spatie/backtrace" />
+      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
-      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
-      <path value="$PROJECT_DIR$/vendor/tinymce/tinymce" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
