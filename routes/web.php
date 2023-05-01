@@ -34,7 +34,7 @@ Route::middleware(['auth', 'role:client'])->name('client.')->prefix('client')->g
 });
 
 //Lead Routes
-Route::middleware(['auth', 'role:lead'])->name('lead.')->prefix('lead')->grouo(function(){
+Route::middleware(['auth', 'role:lead'])->name('lead.')->prefix('lead')->group(function(){
 
 });
 

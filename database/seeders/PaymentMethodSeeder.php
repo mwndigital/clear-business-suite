@@ -19,7 +19,7 @@ class PaymentMethodSeeder extends Seeder
             'name' => 'Credit / Debit Card'
         ]);
         PaymentMethods::create([
-           'Direct Debit'
+           'name' => 'Direct Debit'
         ]);
         PaymentMethods::create([
             'name' => 'PayPal'

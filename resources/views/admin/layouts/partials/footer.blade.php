@@ -1,4 +1,5 @@
-        </main>
+            </main>
+        </div>
         <footer>
 
         </footer>

@@ -20,7 +20,7 @@ class AdminSeeder extends Seeder
         User::create([
            'first_name' => 'Admin',
             'last_name' => 'User',
-            'email' => 'admin.user@example.com',
+            'email' => 'admin@example.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password')
         ])->assignRole(['super admin', 'admin']);

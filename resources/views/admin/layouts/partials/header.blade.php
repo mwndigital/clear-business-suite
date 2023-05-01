@@ -17,11 +17,9 @@
 
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
+        <script src="{{ asset('assets/js/sitewide.js') }}"></script>
+        <script src="{{ asset('assets/js/admin.js') }}"></script>
 
         @stack('page-scripts')
         @stack('page-styles')
@@ -29,9 +27,22 @@
         <x-head.tinymce-config/>
     </head>
     <body>
-
         <header>
-
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <x-application-logo/>
+                    </a>
+                    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        @include('admin.layouts.partials.menus.topbarMainMenu')
+                        @include('admin.layouts.partials.menus.topbarSecondryMenu')
+                    </div>
+                </div>
+            </nav>
         </header>
         @include('sweetalert::alert')
-        <main id="app">
+        <div id="app">
+            <main>

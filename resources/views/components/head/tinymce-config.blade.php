@@ -1,4 +1,4 @@
-<script src="{{ asset('js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
+<script src="{{ asset('assets/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: 'textarea#tinyEditor', // Replace this CSS selector to match the placeholder element for TinyMCE
