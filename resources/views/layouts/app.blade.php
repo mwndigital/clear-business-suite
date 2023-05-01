@@ -10,8 +10,6 @@
     <title>@stack('page-title') - {{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
