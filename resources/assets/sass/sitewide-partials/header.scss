@@ -1,0 +1,54 @@
+header {
+    .navbar {
+        .navbar-brand {
+
+            img {
+
+            }
+        }
+        .navbar-toggler {
+
+        }
+        .navbar-nav {
+            li {
+                a {
+
+                    &:hover {
+
+                    }
+                }
+                &.active {
+
+                }
+                &.dropdown {
+                    a {
+
+                        &:hover {
+
+                        }
+                    }
+                    .dropdown-menu {
+                        li {
+                            a {
+
+                                &:hover {
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .additionalMenu {
+            li {
+                a {
+
+                    &:hover {
+
+                    }
+                }
+            }
+        }
+    }
+}

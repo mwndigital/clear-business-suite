@@ -18,11 +18,12 @@ class AdminUserSeeder extends Seeder
     public function run()
     {
         User::create([
-           'first_name' => 'Admin',
-           'last_name' => 'User',
-           'email' => 'admin@example.com',
-           'email_verified_at' => Carbon::now(),
-           'password' => Hash::make('password')
+            'first_name' => 'Admin',
+            'last_name' => 'User',
+            'password' => Hash::make('password'),
+            'email' => 'admin@example.com',
+            'email_verified_at' => Carbon::now(),
+
         ])->assignRole(['super admin', 'admin']);
     }
 }

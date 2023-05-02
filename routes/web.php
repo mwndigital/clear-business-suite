@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminIndexController;
+use App\Http\Controllers\Client\ClientIndexController;
+use App\Http\Controllers\Lead\LeadIndexController;
+use App\Http\Controllers\Staff\StaffIndexController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,39 +17,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-    return redirect('login');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-//Admin & Super Admin Routes
+//Super Admin & Admin Routes
 Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('admin')->group(function(){
-    //Main Dashboard Route
-   Route::get('dashboard', [AdminIndexController::class, 'index'])->name('dashboard');
-
-   //Clients Routes
-
-
+    //Dashboard
+    Route::get('dashboard', [AdminIndexController::class, 'index'])->name('dashboard');
 });
 
 //Staff Routes
 Route::middleware(['auth', 'role:staff'])->name('staff.')->prefix('staff')->group(function(){
-
+    //Dashboard
+    Route::get('dashboard', [StaffIndexController::class, 'index'])->name('dashboard');
 });
 
 //Client Routes
 Route::middleware(['auth', 'role:client'])->name('client.')->prefix('client')->group(function(){
-
+    //Dashboard
+    Route::get('dashboard', [ClientIndexController::class, 'index'])->name('dashboard');
 });
 
 //Lead Routes
 Route::middleware(['auth', 'role:lead'])->name('lead.')->prefix('lead')->group(function(){
-
+    //Dashboard
+    Route::get('dashboard', [LeadIndexController::class, 'index'])->name('dashboard');
 });
 
+Auth::routes();
 
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

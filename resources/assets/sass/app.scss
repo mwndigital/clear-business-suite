@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
 
 // Font-Awesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
@@ -8,8 +10,12 @@
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
+//Core
+@import "core/colours";
+@import "core/customBtns";
+@import "core/fonts";
+@import "core/mixin";
 
 //Sitewide Partials
-
-
-//Sitewide Components
+@import "sitewide-partials/header";
+@import "sitewide-partials/footer";
