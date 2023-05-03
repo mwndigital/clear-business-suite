@@ -21066,3 +21066,49 @@ readers do not read off random characters that represent icons */
 .fa-steam-symbol:before {
   content: "\f3f6";
 }
+
+@font-face {
+  font-family: "ralBlack";
+  src: url(/fonts/Raleway-Black.ttf?03c5f5f5841a7e1c308d0a05ab31d4c8);
+}
+@font-face {
+  font-family: "ralExtraBold";
+  src: url(/fonts/Raleway-ExtraBold.ttf?6a689e13040bdcefd8923a948a4d4c4c);
+}
+@font-face {
+  font-family: "ralBold";
+  src: url(/fonts/Raleway-Bold.ttf?b430856ea5fc5c5168519d03cafd49c1);
+}
+@font-face {
+  font-family: "ralSemiBold";
+  src: url(/fonts/Raleway-SemiBold.ttf?b8a54fb018bb5a0d762cf3d8726d9be8);
+}
+@font-face {
+  font-family: "ralMedium";
+  src: url(/fonts/Raleway-Medium.ttf?10498e1dc3ccaf664c71800178cc9414);
+}
+@font-face {
+  font-family: "ralReg";
+  src: url(/fonts/Raleway-Regular.ttf?cedc82ec9fbfca66222a3124c7a5dd0f);
+}
+@font-face {
+  font-family: "ralLight";
+  src: url(/fonts/Raleway-Light.ttf?f86090a73e4996cf067ed8a18d575d42);
+}
+header .navbar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+header .navbar .navbar-nav li {
+  margin-right: 20px;
+}
+header .navbar .navbar-nav li a {
+  font-family: "ralMedium", sans-serif;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+header .navbar .additionalMenu {
+  margin: 0;
+  padding: 0;
+}
