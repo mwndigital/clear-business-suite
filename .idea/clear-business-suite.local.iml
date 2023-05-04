@@ -119,6 +119,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/realrashid/sweet-alert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-permission" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/tinymce/tinymce" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/monarobase/country-list" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/umpirsky/country-list" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

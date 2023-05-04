@@ -15,7 +15,16 @@
 @import "core/customBtns";
 @import "core/fonts";
 @import "core/mixin";
+@import "core/body";
 
 //Sitewide Partials
 @import "sitewide-partials/header";
+@import "sitewide-partials/main";
+@import "sitewide-partials/sidebar";
+@import "sitewide-partials/pageHero";
+@import "sitewide-partials/pageActionsBanner";
+@import "sitewide-partials/pageMain";
 @import "sitewide-partials/footer";
+
+//Sitewide Pages
+@import "sitewide-pages/dashboard";

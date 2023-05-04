@@ -21095,20 +21095,192 @@ readers do not read off random characters that represent icons */
   font-family: "ralLight";
   src: url(/fonts/Raleway-Light.ttf?f86090a73e4996cf067ed8a18d575d42);
 }
+body {
+  background-color: #f3f3f3;
+}
+
+header {
+  background-color: #003b73;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
 header .navbar {
   align-items: center;
   display: flex;
   flex-direction: row;
 }
-header .navbar .navbar-nav li {
-  margin-right: 20px;
+header .navbar .row {
+  width: 100%;
 }
-header .navbar .navbar-nav li a {
-  font-family: "ralMedium", sans-serif;
-  font-size: 1.2rem;
-  text-decoration: none;
+header .navbar .navbar-brand {
+  color: #ffffff;
+  font-family: "ralBlack", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  margin-right: 40px;
+}
+header .navbar .sidebar-toggler {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #ffffff;
 }
 header .navbar .additionalMenu {
   margin: 0;
   padding: 0;
+}
+header .navbar .additionalMenu li {
+  margin-right: 15px;
+}
+header .navbar .additionalMenu li a {
+  color: #ffffff;
+  font-family: "ralReg", sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+header .navbar .additionalMenu li a:hover {
+  color: #60a3d9;
+}
+header .navbar .additionalMenu li:last-of-type {
+  margin-right: 0;
+}
+header .navbar .additionalMenu li.dropdown .dropdown-menu {
+  background-color: #0074b7;
+  border: 0;
+  border-radius: 0;
+}
+header .navbar .additionalMenu li.dropdown .dropdown-menu li {
+  display: block;
+  width: 100%;
+}
+header .navbar .additionalMenu li.dropdown .dropdown-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+header .navbar .additionalMenu li.dropdown .dropdown-menu li a:hover {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: #60a3d9;
+  outline: none;
+}
+header .navbar .additionalMenu li.dropdown .dropdown-menu li .dropdown-divider {
+  border-top: 1px solid #1eadff;
+}
+
+main.main {
+  margin-left: auto;
+  padding: 1rem 1rem 0 1rem;
+  transition: all 0.4s ease-in-out;
+  width: 85%;
+}
+main.main.full {
+  width: 100%;
+}
+
+.sidebar {
+  background-color: transparent;
+  border-right: 1px solid #dadada;
+  left: -600px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  position: fixed;
+  transition: all 0.4s ease-in-out;
+  width: 0;
+}
+
+.sidebar.show {
+  height: 100vh;
+  left: 0;
+  overflow-y: auto;
+  width: 15%;
+}
+.sidebar.show ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar.show ul li {
+  margin-bottom: 10px;
+}
+.sidebar.show ul li a {
+  color: #003b73;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+.sidebar.show ul li a:hover {
+  color: #60a3d9;
+}
+.sidebar.show ul li.dropdown .dropdown-menu {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0.75rem 0 0.75rem 0.75rem;
+}
+.sidebar.show ul li.dropdown .dropdown-menu li a {
+  font-family: "ralReg", sans-serif;
+  font-size: 1rem;
+}
+
+.pageHero .inner {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  padding: 2rem;
+  width: 100%;
+}
+.pageHero .inner h1, .pageHero .inner .h1 {
+  color: #003b73;
+  font-family: "ralBold", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.pageActionsBanner .inner {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+}
+.pageActionsBanner .inner .btn-group {
+  width: 100%;
+}
+.pageActionsBanner .inner .btn-group .btn {
+  display: inline-block;
+  width: auto;
+}
+
+.pageMain {
+  margin: 30px 0;
+}
+.pageMain .inner {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+}
+.dashboardWelcomeBanner .inner {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 20px;
+  padding: 2rem;
+}
+.dashboardWelcomeBanner .inner h4, .dashboardWelcomeBanner .inner .h4 {
+  color: #0074b7;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+.dashboardWelcomeBanner .inner h1, .dashboardWelcomeBanner .inner .h1 {
+  color: #003b73;
+  font-family: "ralBold", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0;
 }

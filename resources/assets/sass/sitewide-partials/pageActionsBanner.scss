@@ -1,0 +1,19 @@
+.pageActionsBanner {
+    .inner {
+        background-color: $w;
+        border: 0;
+        border-radius: 20px;
+        padding: 2rem;
+
+        width: 100%;
+
+        .btn-group {
+            width: 100%;
+
+            .btn {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    }
+}

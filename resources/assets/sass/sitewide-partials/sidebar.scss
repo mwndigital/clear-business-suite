@@ -1,0 +1,60 @@
+.sidebar {
+    background-color: transparent;
+    border-right: 1px solid darken(#f3f3f3, 10%);
+    left: -600px;
+
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: fixed;
+    @include transition(all .4s ease-in-out);
+    width: 0;
+}
+.sidebar.show {
+    height: 100vh;
+    left: 0;
+    overflow-y:auto;
+    width: 15%;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin-bottom: 10px;
+            a {
+                color: $darkBlue;
+                font-family: $ralMedium;
+                font-size: 1.1rem;
+
+                text-decoration: none;
+                @include transition(all .4s ease-in-out);
+
+                &:hover {
+                    color: $lightBlue;
+                }
+            }
+            &.dropdown {
+                a {
+
+                }
+                .dropdown-menu {
+                    background-color: transparent;
+                    border: 0;
+                    border-radius: 0;
+                    padding: .75rem 0 .75rem .75rem;
+                    li {
+                        a {
+                            font-family: $ralReg;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 812px) and (orientation: portrait) {
+    .sidebar.show {
+
+    }
+}

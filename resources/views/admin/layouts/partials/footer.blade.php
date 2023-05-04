@@ -1,6 +1,8 @@
-            </main>
+                    </main>
+                </div>
+            </div>
             <footer>
-                
+
             </footer>
         </div>
     </body>

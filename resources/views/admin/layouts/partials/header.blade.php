@@ -12,6 +12,7 @@
 
 
         <!-- Stylesheets -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 
@@ -21,6 +22,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
         <script src="{{ asset('assets/js/admin.js') }}"></script>
 
@@ -34,5 +36,9 @@
             <header>
                 @include('admin.layouts.partials.mainMenu')
             </header>
-            <main>
-                @include('sweetalert::alert')
+            @include('sweetalert::alert')
+            <div class="container-fluid">
+                <div class="row">
+                    @include('admin.layouts.partials.sidebar')
+                    <main class="main">
+

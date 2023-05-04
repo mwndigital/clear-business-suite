@@ -3255,6 +3255,15 @@ function withinMaxClamp(min, value, max) {
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+$(document).ready(function () {
+  //Sidebar Toggler
+  $('.sidebar-toggler').click(function () {
+    $(this).find('i').toggleClass('fa-bars fa-times');
+    $('.sidebar').toggleClass('show');
+    $('main.main').toggleClass('full');
+  });
+  $('.dataTablesTable').DataTable();
+});
 
 /***/ }),
 
