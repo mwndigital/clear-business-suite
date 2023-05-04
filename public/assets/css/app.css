@@ -21099,6 +21099,30 @@ body {
   background-color: #f3f3f3;
 }
 
+a.darkBlueBtnXl,
+button.darkBlueBtnXl,
+input.darkBlueBtnXl {
+  background-color: #003b73;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "ralSemiBold", sans-serif;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+a.darkBlueBtnXl:hover,
+button.darkBlueBtnXl:hover,
+input.darkBlueBtnXl:hover {
+  background-color: #0055a6;
+  border: 0;
+  box-shadow: none;
+  color: #ffffff;
+  outline: none;
+  text-decoration: none;
+}
+
 header {
   background-color: #003b73;
   padding-bottom: 0.5rem;
@@ -21172,7 +21196,7 @@ header .navbar .additionalMenu li.dropdown .dropdown-menu li .dropdown-divider {
 
 main.main {
   margin-left: auto;
-  padding: 1rem 1rem 0 1rem;
+  padding: 6rem 1rem 0 1rem;
   transition: all 0.4s ease-in-out;
   width: 85%;
 }
@@ -21185,7 +21209,7 @@ main.main.full {
   border-right: 1px solid #dadada;
   left: -600px;
   padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-top: 6rem;
   position: fixed;
   transition: all 0.4s ease-in-out;
   width: 0;
@@ -21264,6 +21288,55 @@ main.main.full {
   border: 0;
   border-radius: 20px;
   padding: 2rem;
+  width: 100%;
+}
+.pageMain form .row {
+  margin-bottom: 30px;
+}
+.pageMain form label {
+  color: #003b73;
+  display: block;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.pageMain form .input-group {
+  display: flex;
+  flex-direction: row;
+}
+.pageMain form .input-group input[type=text],
+.pageMain form .input-group input[type=tel],
+.pageMain form .input-group input[type=email],
+.pageMain form .input-group input[type=number],
+.pageMain form .input-group input[type=password],
+.pageMain form .input-group select {
+  background-color: #ffffff !important;
+  border: 1px solid #003b73;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-block;
+  height: 40px;
+  outline: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 80%;
+}
+.pageMain form input[type=text],
+.pageMain form input[type=tel],
+.pageMain form input[type=email],
+.pageMain form input[type=number],
+.pageMain form input[type=password],
+.pageMain form select {
+  background-color: #ffffff !important;
+  border: 1px solid #003b73;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  height: 40px;
+  outline: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   width: 100%;
 }
 .dashboardWelcomeBanner .inner {

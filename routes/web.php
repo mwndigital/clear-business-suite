@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminClientController;
 use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\Client\ClientIndexController;
 use App\Http\Controllers\Lead\LeadIndexController;
+use App\Http\Controllers\PasswordGenerateController;
 use App\Http\Controllers\Staff\StaffIndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,9 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     //Clients
     Route::resource('clients', AdminClientController::class);
+
+    //Password Generation Route
+    Route::get('generate-password', [PasswordGenerateController::class, 'generatePassword'])->name('generate.password');
 });
 
 //Staff Routes

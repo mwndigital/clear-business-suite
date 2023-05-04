@@ -33,7 +33,7 @@
     </head>
     <body>
         <div id="app">
-            <header>
+            <header class="fixed-top">
                 @include('admin.layouts.partials.mainMenu')
             </header>
             @include('sweetalert::alert')

@@ -1,0 +1,27 @@
+a.darkBlueBtn,
+button.darkBlueBtn,
+input.darkBlueBtn {
+
+}
+a.darkBlueBtnXl,
+button.darkBlueBtnXl,
+input.darkBlueBtnXl {
+    background-color: $darkBlue;
+    border: 0;
+    border-radius: 10px;
+    color: $w;
+    font-family: $ralSemiBold;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    @include transition(all .4s ease-in-out);
+    text-decoration: none;
+
+    &:hover {
+        background-color: lighten($darkBlue, 10%);
+        border: 0;
+        box-shadow: none;
+        color: $w;
+        outline: none;
+        text-decoration: none;
+    }
+}

@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ClientStoreRequest;
+use App\Models\Currencies;
 use App\Models\User;
+use App\Models\UserDetails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Monarobase\CountryList\CountryListFacade;
 use Torann\Currency\Currency;
 
@@ -31,7 +35,8 @@ class AdminClientController extends Controller
     public function create()
     {
         $countries = CountryListFacade::getList('en');
-        return view('admin.clients.create', compact('countries', ));
+        $currencies = Currencies::all();
+        return view('admin.pages.clients.create', compact('countries', 'currencies'));
     }
 
     /**
@@ -40,9 +45,34 @@ class AdminClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientStoreRequest $request)
     {
-        //
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'status' => 'active',
+        ])->assignRole('client');
+
+        $userDetails = UserDetails::create([
+            'company_name' => $request->company_name,
+            'default_language' => $request->default_language,
+            'address_line_one' => $request->address_line_one,
+            'address_line_two' => $request->address_line_two,
+            'town_city' => $request->town_city,
+            'state_region' => $request->state_region,
+            'zip_postcode' => $request->zip_postcode,
+            'country' => $request->country,
+            'phone_number' => $request->phone_number,
+            'default_payment_method' => $request->default_payment_method,
+            'default_currency' => $request->default_currency,
+            'default_currency_symbol' => $request->default_currency_symbol,
+            'website' => $request->website,
+            'user_id' => $user->id
+        ]);
+        
+
     }
 
     /**

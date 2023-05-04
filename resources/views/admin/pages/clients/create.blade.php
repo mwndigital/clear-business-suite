@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @push('page-title')
-
+    Create New Client - Admin
 @endpush
 @section('content')
     <section class="pageHero">
@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <div class="inner">
                         <div class="d-flex flex-md-row justify-content-end" style="width: 100%;">
-                            <a href="{{ route('admin.clients.index') }}" class="btn btn-primary" style="width: 100px;">Back to all clients</a>
+                            <a href="{{ route('admin.clients.index') }}" class="btn btn-primary" >Back to all clients</a>
 
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label for="">Email Address*</label>
                                     <input type="email" name="email" id="email" value="{{ old('email') }}" required>
                                     @error('email')
@@ -85,7 +85,7 @@
                                     </div>
                                     @enderror
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <label for="">Phone Number</label>
                                     <input type="tel" name="phone_number" id="phone_number" value="{{ old('phone_number') }}">
                                     @error('phone_number')
@@ -93,6 +93,36 @@
                                         {{ $message }}
                                     </div>
                                     @enderror
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Website</label>
+                                    <input type="text" name="website" id="website" value="{{ old('website') }}">
+                                    @error('website')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Password *</label>
+                                    <div class="input-group">
+                                        <input type="password" name="password" id="password" class="form-control">
+                                        <button type="button" class="input-group-text" id="show-password-btn"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Confirm Password *</label>
+                                    <div class="input-group">
+                                        <input type="password" name="confirmation_password" id="confirmation_password" class="form-control">
+                                        <button type="button" class="input-group-text" id="show-confirmationPassword-btn"><i class="fa-solid fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="w-full mt-2">
+                                    <button type="button" class="generatePasswordBtn btn btn-primary" id="generate-password-btn">Generate password</button>
                                 </div>
                             </div>
                             <div class="row">
@@ -147,9 +177,57 @@
                                     <label for="">Country</label>
                                     <select name="country" id="country" required>
                                         @foreach($countries as $country)
-                                            <option value="{{ $country->name }}">{{ $country->name }}</option>
+                                            <option value="{{ $country }}">{{ $country }}</option>
                                         @endforeach
                                     </select>
+                                    @error('country')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="">Default Payment Method</label>
+                                    <select name="default_payment_method" id="default_payment_method">
+
+                                    </select>
+                                    @error('default_payment_method')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Default Currency</label>
+                                    <select name="default_currency" id="default_currency">
+                                        <option value="" selected disabled>Default Currency</option>
+                                        @foreach($currencies as $cur)
+                                            <option value="{{ $cur->code }}">{{ $cur->name }} - {{ $cur->code }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('default_currency')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="">Default Currency Symbol</label>
+                                    <input type="text" name="default_currency_symbol" id="default_currency_symbol" readonly>
+                                    @error('default_currency_symbol')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="darkBlueBtnXl">
+                                        Create
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -158,4 +236,25 @@
             </div>
         </div>
     </section>
+
+    @push('page-scripts')
+        <script>
+            $(document).ready(function(){
+                $('#default_currency').change(function(){
+                    var currency = $(this).val();
+                    var symbol = '';
+
+                    switch (currency) {
+                        @foreach($currencies as $c)
+                        case '{{ $c->code }}':
+                            symbol = '{{ $c->symbol }}';
+                            break;
+                        @endforeach
+                    }
+                    $('#default_currency_symbol').val(symbol);
+                })
+            });
+        </script>
+    @endpush
+    <x-password-generation-script/>
 @endsection
