@@ -21,9 +21,9 @@ class AdminClientController extends Controller
      */
     public function index()
     {
-        $clients = User::with('userDetail')->whereHas('roles', function($query){
+        $clients = User::with('userDetail')->whereHas('roles', function ($query) {
             $query->where('name', 'client');
-        });
+        })->get();
         return view('admin.pages.clients.index', compact('clients'));
     }
 
@@ -71,7 +71,8 @@ class AdminClientController extends Controller
             'website' => $request->website,
             'user_id' => $user->id
         ]);
-        
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has created a new client ' . $request->first_name . ' ' . $request->last_name);
+        return redirect('admin/clients')->with('success', 'New client has been added.');
 
     }
 

@@ -53,14 +53,14 @@
                                         <td>{{ $client->first_name }} {{ $client->last_name }}</td>
                                         <td>{{ $client->userDetail->company_name }}</td>
                                         <td>{{ $client->email }}</td>
-                                        <td>{{ $client->created_at }}</td>
+                                        <td>{{ date('d/m/Y - H:i', strtotime($client->created_at)) }}</td>
                                         <td>{{ $client->status }}</td>
                                         <td>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                                 </button>
-                                                <div class="dropdown-menu">
+                                                <div class="dropdown-menu dropdown-menu-end">
                                                     <a href="">View</a>
                                                     <a href="">Edit</a>
                                                     <a href="">Delete</a>

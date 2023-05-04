@@ -121,6 +121,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tinymce/tinymce" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monarobase/country-list" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/umpirsky/country-list" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-activitylog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/spatie/laravel-package-tools" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

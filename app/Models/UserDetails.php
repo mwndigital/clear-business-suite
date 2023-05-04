@@ -22,6 +22,7 @@ class UserDetails extends Model
         'default_payment_method',
         'default_currency',
         'default_currency_symbol',
+        'user_id'
     ];
 
     public function user() {

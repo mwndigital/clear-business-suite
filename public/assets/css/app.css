@@ -21339,6 +21339,57 @@ main.main.full {
   padding-right: 0.5rem;
   width: 100%;
 }
+.pageMain table tbody tr td {
+  color: #003b73;
+  font-family: "ralReg", sans-serif;
+  font-size: 1.1rem;
+}
+.pageMain table tbody tr td .dropdown button.dropdown-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #003b73;
+  display: block;
+  font-size: 1.1rem;
+  text-align: right;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+}
+.pageMain table tbody tr td .dropdown button.dropdown-toggle:hover, .pageMain table tbody tr td .dropdown button.dropdown-toggle.active {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #0074b7;
+  outline: none;
+  text-decoration: none;
+}
+.pageMain table tbody tr td .dropdown button.dropdown-toggle:after {
+  display: none;
+}
+.pageMain table tbody tr td .dropdown .dropdown-menu {
+  border: 0;
+  border-radius: 0;
+}
+.pageMain table tbody tr td .dropdown .dropdown-menu a {
+  color: #003b73;
+  display: block;
+  font-family: "ralReg", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+  width: 100%;
+}
+.pageMain table tbody tr td .dropdown .dropdown-menu a:hover {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  color: #0074b7;
+  outline: none;
+  text-decoration: none;
+}
+
 .dashboardWelcomeBanner .inner {
   background-color: #ffffff;
   border: 0;
