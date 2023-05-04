@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Monarobase\CountryList\CountryListFacade;
+use Torann\Currency\Currency;
 
 class AdminClientController extends Controller
 {
@@ -28,7 +30,8 @@ class AdminClientController extends Controller
      */
     public function create()
     {
-        //
+        $countries = CountryListFacade::getList('en');
+        return view('admin.clients.create', compact('countries', ));
     }
 
     /**
