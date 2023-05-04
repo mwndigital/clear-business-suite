@@ -84,7 +84,9 @@ class AdminClientController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = User::find($id);
+
+        return view('admin.pages.clients.show', compact('client'));
     }
 
     /**

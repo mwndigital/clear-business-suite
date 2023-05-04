@@ -11,7 +11,7 @@
                 <li>
                     <a href="{{ route('admin.clients.index') }}">All Clients</a>
                 </li>
-                <li><a href="">Add New Client</a></li>
+                <li><a href="{{ route('admin.clients.create') }}">Add New Client</a></li>
             </ul>
         </li>
     </ul>

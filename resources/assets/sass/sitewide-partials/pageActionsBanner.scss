@@ -7,13 +7,10 @@
 
         width: 100%;
 
-        .btn-group {
-            width: 100%;
-
-            .btn {
-                display: inline-block;
-                width: auto;
-            }
+        .btn-wrap {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
         }
     }
 }

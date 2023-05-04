@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="inner">
-                        <div class="d-flex flex-md-row justify-content-end" style="width: 100%;">
+                        <div class="btn-wrap d-flex flex-md-row justify-content-end" style="width: 100%;">
                             <a href="{{ route('admin.clients.create') }}" class="btn btn-primary" style="width: 100px;">Add Client</a>
 
                         </div>
@@ -54,14 +54,17 @@
                                         <td>{{ $client->userDetail->company_name }}</td>
                                         <td>{{ $client->email }}</td>
                                         <td>{{ date('d/m/Y - H:i', strtotime($client->created_at)) }}</td>
-                                        <td>{{ $client->status }}</td>
+                                        <td>
+
+                                            {{ $client->status }}
+                                        </td>
                                         <td>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                    <a href="">View</a>
+                                                    <a href="{{ route('admin.clients.show', $client->id) }}">View</a>
                                                     <a href="">Edit</a>
                                                     <a href="">Delete</a>
                                                 </div>

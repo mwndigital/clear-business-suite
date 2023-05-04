@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="inner">
-                        <div class="d-flex flex-md-row justify-content-end" style="width: 100%;">
+                        <div class="btn-wrap d-flex flex-md-row justify-content-end" style="width: 100%;">
                             <a href="{{ route('admin.clients.index') }}" class="btn btn-primary" >Back to all clients</a>
 
                         </div>

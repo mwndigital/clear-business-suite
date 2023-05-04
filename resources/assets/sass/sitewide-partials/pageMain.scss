@@ -64,7 +64,11 @@
 
     table {
         thead {
-
+            th {
+                color: $darkBlue;
+                font-family: $ralBold;
+                font-size: 1.2rem;
+            }
         }
         tbody {
             tr {
@@ -126,5 +130,44 @@
                 }
             }
         }
+    }
+    .tabpanel {
+        .tablist {
+            border-bottom: 1px solid lighten($b, 80%);
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            a {
+                border: 1px solid lighten($b, 80%);
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                color: $darkBlue;
+                font-family: $ralMedium;
+                font-size: 1.1rem;
+                margin-bottom: -1px;
+                padding: .5rem 1.5rem;
+                @include transition(all .4s ease-in-out);
+                text-decoration: none;
+
+                &:hover,
+                &.active {
+                    background-color: $darkBlue;
+                    border: 1px solid $darkBlue;
+                    color: $w;
+                }
+            }
+        }
+        .tab-content {
+            .tab-pane {
+                border: 1px solid lighten($b, 80%);
+                border-top: 0;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                padding: 1rem;
+            }
+        }
+    }
+    .whiteBox {
+
     }
 }

@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67f4e0c1-d156-49b2-bdcc-9b36a5723dd5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/clear-business-suite.local.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/clear-business-suite.local.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/sass/sitewide-partials/pageActionsBanner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/sitewide-partials/pageActionsBanner.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/assets/sass/sitewide-partials/pageMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/sitewide-partials/pageMain.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/clients/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/clients/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/clients/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/clients/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1683060642482</updated>
-      <workItem from="1683060643682" duration="22086000" />
+      <workItem from="1683060643682" duration="23813000" />
     </task>
     <servers />
   </component>
