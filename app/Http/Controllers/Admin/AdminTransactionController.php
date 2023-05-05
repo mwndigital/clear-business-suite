@@ -64,17 +64,6 @@ class AdminTransactionController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -82,7 +71,10 @@ class AdminTransactionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $transaction = Transaction::find($id);
+        $clients = User::role('client')->get();
+        $paymentMethods = PaymentMethods::get();
+        return view('admin.pages.transactions.edit', compact('transaction', 'clients', 'paymentMethods'));
     }
 
     /**
@@ -94,7 +86,21 @@ class AdminTransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Transaction::where('id', $id)->update([
+            'date_time' => $request->date_time,
+            'payment_method' => $request->payment_method,
+            'description' => $request->description,
+            'amount_in' => $request->amount_in,
+            'amount_out' => $request->amount_out,
+            'fees' => $request->fees,
+            'transaction_id' => $request->transaction_id,
+            'invoice_ids' => $request->invoice_ids,
+            'user_id' => $request->input('user_id'),
+        ]);
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated transaction #' . $request->transaction_id);
+
+        return redirect('admin/transactions')->with('success', 'Transaction updated successfully!');
     }
 
     /**

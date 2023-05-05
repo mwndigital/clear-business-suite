@@ -28,7 +28,7 @@
                         <div class="row mt-4">
                             <div class="col-12">
                                 <div class="collapse" id="clientTransactionCollapse">
-                                    <form action="{{ route('admin.clients.transaction-store') }}" method="POST">
+                                    <form action="{{ route('admin.transactions.store') }}" method="POST">
                                         @csrf
                                         <div class="row">
                                             <div class="col-md-6">
@@ -153,8 +153,7 @@
                                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        <a href="">View</a>
-                                                        <a href="">Edit</a>
+                                                        <a href="{{ route('admin.transactions.edit', $transaction->id) }}">Edit</a>
                                                         <a href="">Delete</a>
                                                     </div>
                                                 </div>
