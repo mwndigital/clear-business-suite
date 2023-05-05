@@ -21361,15 +21361,20 @@ main.main.full {
   padding-right: 0.5rem;
   width: 100%;
 }
+.pageMain table {
+  display: block;
+  overflow-x: auto;
+}
 .pageMain table thead th {
   color: #003b73;
   font-family: "ralBold", sans-serif;
   font-size: 1rem;
+  min-width: 200px;
 }
 .pageMain table tbody tr td {
   color: #003b73;
   font-family: "ralReg", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .pageMain table tbody tr td .dropdown button.dropdown-toggle {
   background-color: transparent;
@@ -21415,6 +21420,13 @@ main.main.full {
   color: #0074b7;
   outline: none;
   text-decoration: none;
+}
+.pageMain table.rowLinks {
+  display: block;
+  overflow-x: auto;
+}
+.pageMain table.rowLinks thead {
+  min-width: 200px;
 }
 .pageMain table.rowLinks tbody tr:hover {
   cursor: pointer;

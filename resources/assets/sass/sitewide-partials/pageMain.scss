@@ -69,11 +69,14 @@
     }
 
     table {
+        display: block;
+        overflow-x: auto;
         thead {
             th {
                 color: $darkBlue;
                 font-family: $ralBold;
                 font-size: 1rem;
+                min-width:200px;
             }
         }
         tbody {
@@ -81,7 +84,7 @@
                 td {
                     color: $darkBlue;
                     font-family: $ralReg;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     .dropdown {
                         button.dropdown-toggle {
                             background-color: transparent;
@@ -138,6 +141,11 @@
         }
     }
     table.rowLinks {
+        display: block;
+        overflow-x: auto;
+        thead {
+            min-width: 200px;
+        }
         tbody {
             tr:hover {
                 cursor:pointer;

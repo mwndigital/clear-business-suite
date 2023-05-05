@@ -140,7 +140,7 @@
                                     <tbody>
                                     @foreach($transactions as $transaction)
                                         <tr>
-                                            <td>{{ $transaction->user->first_name }} {{ $transaction->user->last_name }}</td>
+                                            <td><a href="{{ route('admin.clients.show', $transaction->user->id) }}">{{ $transaction->user->first_name }} {{ $transaction->user->last_name }}</a></td>
                                             <td>{{ date('d/m/Y', strtotime($transaction->date)) }}</td>
                                             <td>{{ $transaction->payment_method }}</td>
                                             <td>{!! $transaction->description !!}</td>
@@ -154,7 +154,7 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a href="{{ route('admin.transactions.edit', $transaction->id) }}">Edit</a>
-                                                        <a href="">Delete</a>
+                                                        <a class="confirm-delete-btn" href="{{ route('admin.transactions.destroy', $transaction->id) }}">Delete</a>
                                                     </div>
                                                 </div>
                                             </td>

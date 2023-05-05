@@ -111,6 +111,9 @@ class AdminTransactionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $transaction = Transaction::where('id', $id);
+        $transaction->delete();
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has deleted ' . $transaction->transaction_id);
+        return redirect('admin/transactions')->with('success', 'Transaction deleted successfully');
     }
 }
