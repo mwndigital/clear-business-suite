@@ -21251,6 +21251,8 @@ main.main.full {
   border: 0;
   border-radius: 0;
   padding: 0.75rem 0 0.75rem 0.75rem;
+  position: relative !important;
+  transform: translate(0px, 0px) !important;
 }
 .sidebar.show ul li.dropdown .dropdown-menu li a {
   font-family: "ralReg", sans-serif;
@@ -21324,6 +21326,9 @@ main.main.full {
 .pageMain form .input-group input[type=email],
 .pageMain form .input-group input[type=number],
 .pageMain form .input-group input[type=password],
+.pageMain form .input-group input[type=date],
+.pageMain form .input-group input[type=datetime],
+.pageMain form .input-group input[type=datetime-local],
 .pageMain form .input-group select {
   background-color: #ffffff !important;
   border: 1px solid #003b73;
@@ -21341,6 +21346,9 @@ main.main.full {
 .pageMain form input[type=email],
 .pageMain form input[type=number],
 .pageMain form input[type=password],
+.pageMain form input[type=date],
+.pageMain form input[type=datetime],
+.pageMain form input[type=datetime-local],
 .pageMain form select {
   background-color: #ffffff !important;
   border: 1px solid #003b73;
@@ -21356,7 +21364,7 @@ main.main.full {
 .pageMain table thead th {
   color: #003b73;
   font-family: "ralBold", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .pageMain table tbody tr td {
   color: #003b73;
@@ -21460,6 +21468,24 @@ main.main.full {
 .pageMain .whiteBox table tbody tr td {
   color: #000000;
   font-size: 1rem;
+}
+.pageMain .whiteAmountBox {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 10px;
+  margin: 0 0 30px 0;
+  padding: 1.5rem;
+}
+.pageMain .whiteAmountBox h4.amount, .pageMain .whiteAmountBox .amount.h4 {
+  color: #0074b7;
+  font-family: "ralBold", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0px;
+}
+.pageMain .whiteAmountBox h3.desc, .pageMain .whiteAmountBox .desc.h3 {
+  color: #003b73;
+  font-family: "ralReg", sans-serif;
+  font-size: 1.2rem;
 }
 
 .dashboardWelcomeBanner .inner {

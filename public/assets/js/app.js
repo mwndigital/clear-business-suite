@@ -3262,6 +3262,9 @@ $(document).ready(function () {
     $('.sidebar').toggleClass('show');
     $('main.main').toggleClass('full');
   });
+  $('.collapseToggleBtn').click(function () {
+    $(this).find('i').toggleClass('fa-chevron-down fa-chevron-up');
+  });
   if ($(window).width() < 993) {
     $('.sidebar').removeClass('show');
   }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientStoreRequest;
+use App\Http\Requests\TransactionStoreRequest;
 use App\Models\Currencies;
 use App\Models\PaymentMethods;
+use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserDetails;
 use Illuminate\Http\Request;
@@ -87,8 +89,34 @@ class AdminClientController extends Controller
     public function show($id)
     {
         $client = User::find($id);
+        $clients = User::role('client')->get();
+        $user_transactions = Transaction::where('user_id', $id)->get();
+        $totalAmountIn = Transaction::where('user_id', $id)->sum('amount_in');
+        $totalAmountOut = Transaction::where('user_id', $id)->sum('amount_out');
+        $totalFees = Transaction::where('user_id', $id)->sum('fees');
+        $balance = $totalAmountIn - $totalAmountOut - $totalFees;
+        $paymentMethods = PaymentMethods::all();
+        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients'));
+    }
 
-        return view('admin.pages.clients.show', compact('client'));
+    public function transactionStore(TransactionStoreRequest $request)
+    {
+        Transaction::create([
+            'date_time' => $request->date_time,
+            'payment_method' => $request->payment_method,
+            'description' => $request->description,
+            'amount_in' => $request->amount_in,
+            'amount_out' => $request->amount_out,
+            'fees' => $request->fees,
+            'transaction_id' => $request->transaction_id,
+            'invoice_ids' => $request->invoice_ids,
+            'user_id' => $request->input('user_id'),
+        ]);
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has added transaction #' . $request->transaction_id);
+
+        return redirect()->back()->with('success', 'Transaction added successfully!');
+
     }
 
     /**

@@ -30,6 +30,9 @@
             input[type='email'],
             input[type='number'],
             input[type='password'],
+            input[type='date'],
+            input[type='datetime'],
+            input[type='datetime-local'],
             select {
                 background-color: $w !important;
                 border: 1px solid $darkBlue;
@@ -48,6 +51,9 @@
         input[type='email'],
         input[type='number'],
         input[type='password'],
+        input[type='date'],
+        input[type='datetime'],
+        input[type='datetime-local'],
         select {
             background-color: $w !important;
             border: 1px solid $darkBlue;
@@ -67,7 +73,7 @@
             th {
                 color: $darkBlue;
                 font-family: $ralBold;
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
         }
         tbody {
@@ -202,5 +208,24 @@
             }
         }
 
+    }
+    .whiteAmountBox {
+        background-color: $w;
+        border: 0;
+        border-radius: 10px;
+        margin: 0 0 30px 0;
+        padding: 1.5rem;
+
+        h4.amount {
+            color: $mediumBlue;
+            font-family: $ralBold;
+            font-size: 2rem;
+            margin-bottom: 0px;
+        }
+        h3.desc {
+            color: $darkBlue;
+            font-family: $ralReg;
+            font-size: 1.2rem;
+        }
     }
 }

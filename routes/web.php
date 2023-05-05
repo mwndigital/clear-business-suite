@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminClientController;
 use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\Admin\AdminSettingsController;
+use App\Http\Controllers\Admin\AdminTransactionController;
 use App\Http\Controllers\Client\ClientIndexController;
 use App\Http\Controllers\Lead\LeadIndexController;
 use App\Http\Controllers\PasswordGenerateController;
@@ -30,8 +31,11 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     Route::get('dashboard', [AdminIndexController::class, 'index'])->name('dashboard');
 
     //Clients
+    Route::post('clients/transaction-store', [AdminClientController::class, 'transactionStore'])->name('clients.transaction-store');
     Route::resource('clients', AdminClientController::class);
 
+    //Transactions
+    Route::resource('transactions', AdminTransactionController::class);
 
 
     //Settings

@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <div class="inner">
                         <div class="btn-wrap d-flex flex-md-row justify-content-end" style="width: 100%;">
-                            <a href="{{ route('admin.clients.create') }}" class="btn btn-primary" style="width: 100px;">Add Client</a>
+                            <a href="{{ route('admin.clients.create') }}" class="btn btn-primary">Add Client</a>
 
                         </div>
                     </div>
