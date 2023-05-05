@@ -22,7 +22,7 @@
                 <li>
                     <a href="{{ route('admin.transactions.index') }}">All Transactions</a>
                 </li>
-                <li><a href="">Add New Transaction</a></li>
+                <li><a href="{{ route('admin.transactions.create') }}">Add New Transaction</a></li>
             </ul>
         </li>
     </ul>

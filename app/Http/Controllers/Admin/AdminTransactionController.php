@@ -32,7 +32,9 @@ class AdminTransactionController extends Controller
      */
     public function create()
     {
-        //
+        $clients = User::role('client')->get();
+        $paymentMethods = PaymentMethods::get();
+        return view('admin.pages.transactions.create', compact('clients', 'paymentMethods'));
     }
 
     /**
