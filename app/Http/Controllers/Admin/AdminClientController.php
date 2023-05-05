@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientStoreRequest;
 use App\Models\Currencies;
+use App\Models\PaymentMethods;
 use App\Models\User;
 use App\Models\UserDetails;
 use Illuminate\Http\Request;
@@ -36,7 +37,8 @@ class AdminClientController extends Controller
     {
         $countries = CountryListFacade::getList('en');
         $currencies = Currencies::all();
-        return view('admin.pages.clients.create', compact('countries', 'currencies'));
+        $paymentMethods = PaymentMethods::all();
+        return view('admin.pages.clients.create', compact('countries', 'currencies', 'paymentMethods'));
     }
 
     /**

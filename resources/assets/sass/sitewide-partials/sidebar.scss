@@ -1,6 +1,6 @@
 .sidebar {
-    background-color: transparent;
-    border-right: 1px solid darken(#f3f3f3, 10%);
+    background-color: $w;
+    height: 100vh;
     left: -600px;
 
     padding-bottom: 1rem;
@@ -55,6 +55,12 @@
 
 @media screen and (min-width: 320px) and (max-width: 812px) and (orientation: portrait) {
     .sidebar.show {
-
+        background-color: $w;
+        -webkit-box-shadow: 15px 6px 20px -5px rgba(0,0,0,0.5);
+        -moz-box-shadow: 15px 6px 20px -5px rgba(0,0,0,0.5);
+        box-shadow: 15px 6px 20px -5px rgba(0,0,0,0.5);
+        padding-top: 7rem;
+        width: 80%;
+        z-index: 1000;
     }
 }

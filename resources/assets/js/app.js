@@ -8,6 +8,10 @@ $(document).ready(function(){
         $('main.main').toggleClass('full');
     });
 
+    if($(window).width() < 993){
+        $('.sidebar').removeClass('show');
+    };
+
     $('.dataTablesTable').DataTable();
 
     $('.confirm-delete-btn').click(function(event){

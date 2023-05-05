@@ -3262,6 +3262,10 @@ $(document).ready(function () {
     $('.sidebar').toggleClass('show');
     $('main.main').toggleClass('full');
   });
+  if ($(window).width() < 993) {
+    $('.sidebar').removeClass('show');
+  }
+  ;
   $('.dataTablesTable').DataTable();
   $('.confirm-delete-btn').click(function (event) {
     var form = $(this).closest("form");

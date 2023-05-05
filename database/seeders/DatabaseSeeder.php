@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             AdminUserSeeder::class,
             CurrenciesSeeder::class,
+            PaymentMethodsSeeder::class,
+            ClientSeeder::class,
         ]);
     }
 }

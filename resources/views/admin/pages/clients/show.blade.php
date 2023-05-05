@@ -39,6 +39,15 @@
                         <div class="tablist" id="clientListGroup" role="tablist">
                             <a href="#summaryTab" class=" active" data-bs-toggle="list" role="tab">Summary</a>
                             <a href="#profileTab" class="" data-bs-toggle="list" role="tab">Profile</a>
+                            <a href="#projectsTab" class="" data-bs-toggle="list" role="tab">Projects</a>
+                            <a href="#tasksTab" class="" data-bs-toggle="list" role="tab">Tasks</a>
+                            <a href="#invoicesTab" class="" data-bs-toggle="list" role="tab">Invoices</a>
+                            <a href="#estimatesTab" class="" data-bs-toggle="list" role="tab">Estimates</a>
+                            <a href="#quotesTab" class="" data-bs-toggle="list" role="tab">Quotes</a>
+                            <a href="#transactionsTab" class="" data-bs-toggle="list" role="tab">Transactions</a>
+                            <a href="#ticketsTab" class="" data-bs-toggle="list" role="tab">Tickets</a>
+                            <a href="#notesTab" class="" data-bs-toggle="list" role="tab">Notes</a>
+                            <a href="#notesTab" class="" data-bs-toggle="list" role="tab">Files</a>
                         </div>
                         <div class="tab-content">
                             <div class="tab-pane active" id="summaryTab" role="tabpanel">
@@ -117,6 +126,30 @@
                             </div>
                             <div class="tab-pane" id="profileTab" role="tabpanel">
                                 profile tab
+                            </div>
+                            <div class="tab-pane" id="projectsTab" role="tabpanel">
+                                Projects tab
+                            </div>
+                            <div class="tab-pane" id="tasksTab" role="tabpanel">
+                                Tasks tab
+                            </div>
+                            <div class="tab-pane" id="invoicesTab" role="tabpanel">
+                                Invoices tab
+                            </div>
+                            <div class="tab-pane" id="estimatesTab" role="tabpanel">
+                                Estimates tab
+                            </div>
+                            <div class="tab-pane" id="quotesTab" role="tabpanel">
+                                Quotes tab
+                            </div>
+                            <div class="tab-pane" id="transactionsTab" role="tabpanel">
+                                Transactions tab
+                            </div>
+                            <div class="tab-pane" id="ticketsTab" role="tabpanel">
+                                Tickets tab
+                            </div>
+                            <div class="tab-pane" id="notesTab" role="tabpanel">
+                                Notes tab
                             </div>
                         </div>
                     </div>

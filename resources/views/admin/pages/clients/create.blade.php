@@ -191,7 +191,9 @@
                                 <div class="col-md-4">
                                     <label for="">Default Payment Method</label>
                                     <select name="default_payment_method" id="default_payment_method">
-
+                                        @foreach($paymentMethods as $pm)
+                                            <option value="{{ $pm->name }}">{{ $pm->name }}</option>
+                                        @endforeach
                                     </select>
                                     @error('default_payment_method')
                                     <div class="text-danger">

@@ -21170,7 +21170,7 @@ header .navbar .additionalMenu li:last-of-type {
   margin-right: 0;
 }
 header .navbar .additionalMenu li.dropdown .dropdown-menu {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   border: 0;
   border-radius: 0;
   box-shadow: 4px 9px 20px -10px rgba(0, 0, 0, 0.5);
@@ -21205,9 +21205,15 @@ main.main.full {
   width: 100%;
 }
 
+@media screen and (max-width: 993px) {
+  main.main {
+    margin-left: 0;
+    width: 100%;
+  }
+}
 .sidebar {
-  background-color: transparent;
-  border-right: 1px solid #dadada;
+  background-color: #ffffff;
+  height: 100vh;
   left: -600px;
   padding-bottom: 1rem;
   padding-top: 6rem;
@@ -21251,6 +21257,15 @@ main.main.full {
   font-size: 1rem;
 }
 
+@media screen and (min-width: 320px) and (max-width: 812px) and (orientation: portrait) {
+  .sidebar.show {
+    background-color: #ffffff;
+    box-shadow: 15px 6px 20px -5px rgba(0, 0, 0, 0.5);
+    padding-top: 7rem;
+    width: 80%;
+    z-index: 1000;
+  }
+}
 .pageHero .inner {
   background-color: #ffffff;
   border: 0;
@@ -21393,11 +21408,16 @@ main.main.full {
   outline: none;
   text-decoration: none;
 }
+.pageMain table.rowLinks tbody tr:hover {
+  cursor: pointer;
+}
 .pageMain .tabpanel .tablist {
   border-bottom: 1px solid #cccccc;
   display: flex;
   flex-direction: row;
   gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 .pageMain .tabpanel .tablist a {
   border: 1px solid #cccccc;
@@ -21405,9 +21425,9 @@ main.main.full {
   border-top-right-radius: 10px;
   color: #003b73;
   font-family: "ralMedium", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: -1px;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   transition: all 0.4s ease-in-out;
   text-decoration: none;
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('address_line_one');
             $table->string('address_line_two')->nullable();
             $table->string('town_city');
-            $table->string('state_region');
+            $table->string('state_region')->nullable();
             $table->string('zip_postcode');
             $table->string('country');
             $table->string('phone_number')->nullable();
