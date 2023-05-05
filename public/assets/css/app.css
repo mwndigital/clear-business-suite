@@ -21170,16 +21170,17 @@ header .navbar .additionalMenu li:last-of-type {
   margin-right: 0;
 }
 header .navbar .additionalMenu li.dropdown .dropdown-menu {
-  background-color: #0074b7;
+  background-color: #f3f3f3;
   border: 0;
   border-radius: 0;
+  box-shadow: 4px 9px 20px -10px rgba(0, 0, 0, 0.5);
 }
 header .navbar .additionalMenu li.dropdown .dropdown-menu li {
   display: block;
   width: 100%;
 }
 header .navbar .additionalMenu li.dropdown .dropdown-menu li a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   transition: all 0.4s ease-in-out;
 }
@@ -21187,11 +21188,11 @@ header .navbar .additionalMenu li.dropdown .dropdown-menu li a:hover {
   background-color: transparent;
   border: 0;
   box-shadow: none;
-  color: #60a3d9;
+  color: #003b73;
   outline: none;
 }
 header .navbar .additionalMenu li.dropdown .dropdown-menu li .dropdown-divider {
-  border-top: 1px solid #1eadff;
+  border-top: 1px solid #003b73;
 }
 
 main.main {
@@ -21422,6 +21423,25 @@ main.main.full {
   border-bottom-right-radius: 10px;
   padding: 1rem;
 }
+.pageMain .whiteBox {
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 10px;
+  margin: 0 0 30px 0;
+  padding: 0.75rem;
+}
+.pageMain .whiteBox h5, .pageMain .whiteBox .h5 {
+  color: #003b73;
+  font-family: "ralSemiBold", sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.pageMain .whiteBox table tbody tr td {
+  color: #000000;
+  font-size: 1rem;
+}
+
 .dashboardWelcomeBanner .inner {
   background-color: #ffffff;
   border: 0;

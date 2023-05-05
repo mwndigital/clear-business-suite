@@ -43,14 +43,76 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="summaryTab" role="tabpanel">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mb-4">
                                         <h4>#{{ $client->id }} - {{ $client->first_name }} {{ $client->last_name }}</h4>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <div class="whiteBox">
+                                            <h5>Client Information</h5>
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>First Name</strong></td>
+                                                        <td>{{ $client->first_name }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Last Name</strong></td>
+                                                        <td>{{ $client->last_name }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Company Name</strong></td>
+                                                        <td>{{ $client->userDetail->company_name }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Email Address</strong></td>
+                                                        <td>{{ $client->email }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Address Line One</strong></td>
+                                                        <td>{{ $client->userDetail->address_line_one }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Address Line Two</strong></td>
+                                                        <td>{{ $client->userDetail->address_line_two }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Town/City</strong></td>
+                                                        <td>{{ $client->userDetail->town_city }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>State/Region</strong></td>
+                                                        <td>{{ $client->userDetail->state_region }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Zip/Postcode</strong></td>
+                                                        <td>{{ $client->userDetail->zip_postcode }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Country</strong></td>
+                                                        <td>{{ $client->userDetail->country }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Phone Number</strong></td>
+                                                        <td>{{ $client->userDetail->phone_number }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="whiteBox">
+                                            <h5>Invoices/Billing</h5>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="whiteBox">
+                                            <h5>Other Actions</h5>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="profileTab" role="tabpanel">

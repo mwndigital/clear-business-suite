@@ -48,14 +48,17 @@ header {
 
                     }
                     .dropdown-menu {
-                        background-color: $mediumBlue;
+                        background-color: #f3f3f3;
                         border: 0;
                         border-radius:0;
+                        -webkit-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        -moz-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         li {
                             display: block;
                             width: 100%;
                             a {
-                                color: $w;
+                                color: $b;
                                 text-decoration: none;
                                 @include transition(all .4s ease-in-out);
 
@@ -63,12 +66,12 @@ header {
                                     background-color: transparent;
                                     border: 0;
                                     box-shadow: none;
-                                    color: $lightBlue;
+                                    color: $darkBlue;
                                     outline: none;
                                 }
                             }
                             .dropdown-divider {
-                                border-top: 1px solid lighten($mediumBlue, 20%);
+                                border-top: 1px solid $darkBlue;
                             }
                         }
                     }
