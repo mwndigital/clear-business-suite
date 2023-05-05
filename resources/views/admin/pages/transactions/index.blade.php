@@ -17,6 +17,105 @@
 
     <section class="pageMain">
         <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-md-8">
+                        <canvas id="transactionsLineChart"></canvas>
+                        <script>
+                            var ctx = document.getElementById('transactionsLineChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: [
+                                        @foreach ($transactions as $transaction)
+                                            '{{ $transaction->created_at->format('Y-m-d') }}',
+                                        @endforeach
+                                    ],
+                                    datasets: [{
+                                        label: 'Net Revenue',
+                                        data: [
+                                            @foreach ($transactions as $transaction)
+                                                {{ $transaction->amount_in - $transaction->amount_out }},
+                                            @endforeach
+                                        ],
+                                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                                        borderColor: 'rgba(255, 99, 132, 1)',
+                                        borderWidth: 1
+                                    },
+                                        {
+                                            label: 'Fees',
+                                            data: [
+                                                @foreach ($transactions as $transaction)
+                                                    {{ $transaction->fees }},
+                                                @endforeach
+                                            ],
+                                            backgroundColor: 'rgba(255, 255, 132, 0.2)',
+                                            borderColor: 'rgba(255, 255, 132, 1)',
+                                            borderWidth: 1
+                                        }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex flex-column">
+                            <div class="col-12">
+                                <div class="transactionAmountItem">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3">
+                                            <i class="fa-solid fa-coins"></i>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h5 class="">Total Income</h5>
+                                            <h3 class="">£{{ $totalAmountIn }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="transactionAmountItem">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3">
+                                            <i class="fa-solid fa-sterling-sign"></i>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h5 class="">Total Fees</h5>
+                                            <h3 class="">£{{ $totalFees }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="transactionAmountItem">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-3">
+                                            <i class="fa-solid fa-calculator"></i>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <h5 class="">Total Expense</h5>
+                                            <h3 class="">£{{ $totalAmountOut }}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pageMain">
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="inner">

@@ -22,7 +22,10 @@ class AdminTransactionController extends Controller
         $transactions = Transaction::all();
         $clients = User::role('client')->get();
         $paymentMethods = PaymentMethods::get();
-        return view('admin.pages.transactions.index', compact('transactions', 'clients', 'paymentMethods'));
+        $totalAmountIn = Transaction::sum('amount_in');
+        $totalAmountOut = Transaction::sum('amount_out');
+        $totalFees = Transaction::sum('fees');
+        return view('admin.pages.transactions.index', compact('transactions', 'clients', 'paymentMethods', 'totalAmountIn', 'totalAmountOut', 'totalFees'));
     }
 
     /**

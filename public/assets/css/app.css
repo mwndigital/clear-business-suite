@@ -21499,6 +21499,31 @@ main.main.full {
   font-family: "ralReg", sans-serif;
   font-size: 1.2rem;
 }
+.pageMain .transactionAmountItem {
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  display: block;
+  margin: 0 0 30px auto;
+  padding: 1rem 2rem;
+  width: 85%;
+}
+.pageMain .transactionAmountItem i {
+  color: #003b73;
+  font-size: 3rem;
+}
+.pageMain .transactionAmountItem h5, .pageMain .transactionAmountItem .h5 {
+  color: #bfbfbf;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.65rem;
+  margin-bottom: 0;
+}
+.pageMain .transactionAmountItem h3, .pageMain .transactionAmountItem .h3 {
+  color: #003b73;
+  font-family: "ralBold", sans-serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
 
 .dashboardWelcomeBanner .inner {
   background-color: #ffffff;
