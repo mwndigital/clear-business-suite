@@ -21533,6 +21533,12 @@ main.main.full {
   font-size: 2rem;
   line-height: 2.5rem;
 }
+.pageMain .dataTables_wrapper {
+  min-height: 500px;
+}
+.pageMain .dataTables_wrapper table {
+  min-height: 500px;
+}
 
 .dashboardWelcomeBanner .inner {
   background-color: #ffffff;

@@ -34,6 +34,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     //Clients
     Route::post('clients/transaction-store', [AdminClientController::class, 'transactionStore'])->name('clients.transaction-store');
     Route::resource('clients', AdminClientController::class);
+    Route::delete('clients/transaction-destroy/{id}', [AdminClientController::class, 'transactionDelete'])->name('clients.transaction-destroy');
 
     //Transactions
     Route::resource('transactions', AdminTransactionController::class);

@@ -122,6 +122,12 @@ class AdminClientController extends Controller
         return redirect()->back()->with('success', 'Transaction added successfully!');
 
     }
+    public function transactionDelete($id){
+        $transaction = Transaction::where('id', $id);
+        $transaction->delete();
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has deleted a transaction');
+        return redirect()->back()->with('success', 'Transaction deleted successfully');
+    }
 
     /**
      * Show the form for editing the specified resource.

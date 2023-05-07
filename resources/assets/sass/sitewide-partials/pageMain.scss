@@ -271,7 +271,13 @@
             line-height: 2.5rem;
         }
     }
+    .dataTables_wrapper {
+        min-height: 500px;
 
+        table {
+            min-height: 500px;
+        }
+    }
 }
 
 

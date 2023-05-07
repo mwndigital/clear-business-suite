@@ -328,13 +328,6 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="collapse" id="clientTransactionCollapse">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
                                         <table class="table table-hover dataTablesTable rowLinks">
                                             <thead>
                                             <tr>
@@ -364,7 +357,11 @@
                                                             <div class="dropdown-menu dropdown-menu-end">
                                                                 <a href="">View</a>
                                                                 <a href="">Edit</a>
-                                                                <a href="">Delete</a>
+                                                                <form action="{{ route('admin.clients.transaction-destroy', $transaction->id) }}" method="post">
+                                                                    @csrf
+                                                                    @method("delete")
+                                                                    <button type="submit" class="confirm-delete-btn">Delete</button>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -432,7 +429,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <table class="table table-hover dataTablesTable">
+                                        <table class="table table-hover dataTablesTable rowLinks">
                                             <thead>
                                             <tr>
                                                 <th>Title</th>
