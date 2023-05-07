@@ -25,7 +25,7 @@ class AdminClientNoteRequest extends FormRequest
     {
         return [
             'title' => ['required', 'max:255'],
-            'content' => ['required'],
+            'the_content' => ['required'],
             'user_id' => ['required']
         ];
     }

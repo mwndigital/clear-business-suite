@@ -37,15 +37,15 @@ class AdminClientNoteController extends Controller
      */
     public function store(AdminClientNoteRequest $request)
     {
-        ClientNote::create([
+        $clientNote = ClientNote::create([
             'title' => $request->title,
-            'content' => $request->content,
+            'the_content' => $request->the_content,
             'user_id' => $request->input('user_id'),
         ]);
 
         activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has created a new note for client ' . $request->input('user_id'));
 
-        return redirect()->back()->with('success', 'New note has been created successfull');
+        return redirect()->back()->with('success', 'New note has been created successfully');
     }
 
     /**
@@ -56,7 +56,8 @@ class AdminClientNoteController extends Controller
      */
     public function show($id)
     {
-        //
+        $clientNote = clientNote::where('user_id', $id)->first();
+        return view('admin.pages.clients.notes.show', compact('clientNote'));
     }
 
     /**
@@ -77,9 +78,17 @@ class AdminClientNoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AdminClientNoteRequest $request, $id)
     {
-        //
+        $clientNote = ClientNote::find($id);
+        $clientNote->title = $request->title;
+        $clientNote->the_content = $request->the_content;
+        $clientNote->user_id = $request->input('user_id');
+        $clientNote->save();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated a note for client ' . $request->input('user_id'));
+
+        return redirect()->back()->with('success', 'New note has been updated successfull');
     }
 
     /**

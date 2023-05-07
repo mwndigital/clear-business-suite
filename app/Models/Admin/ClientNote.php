@@ -12,7 +12,7 @@ class ClientNote extends Model
 
     protected $fillable = [
         'title',
-        'content',
+        'the_content',
         'user_id',
     ];
 

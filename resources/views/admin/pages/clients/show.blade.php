@@ -188,6 +188,113 @@
                             </div>
                             <div class="tab-pane" id="transactionsTab" role="tabpanel">
                                 <div class="row my-4">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#clientCreateTransactionModal">Add Transaction</button>
+                                        <div class="modal fade" id="clientCreateTransactionModal" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1>Create transaction for {{ $client->first_name }} {{ $client->last_name }}</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('admin.clients.transaction-store') }}" method="POST">
+                                                            @csrf
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="">Client</label>
+                                                                    <select name="user_id" id="user_id">
+                                                                        @foreach($clients as $c)
+                                                                            <option value="{{ $c->id }}" @if($c->id == $client->id) selected @endif>{{ $c->first_name }} {{ $c->last_name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('user_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="">Date *</label>
+                                                                    <input type="date" name="date_time" id="date_time" value="{{ old('date_time') }}" required>
+                                                                    @error('date_time')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <label for="">Amount in</label>
+                                                                    <input type="number" name="amount_in" id="amount_in" step="any" value="{{ old('amount_in') }}">
+                                                                    @error('amount_in')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <label for="">Amount out</label>
+                                                                    <input type="number" name="amount_out" id="amount_out" step="any" value="{{ old('amount_out') }}">
+                                                                    @error('amount_out')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <label for="">Fees</label>
+                                                                    <input type="number" name="fees" id="fees" step="any" value="{{ old('fees') }}">
+                                                                    @error('fees')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <label for="">Payment Method *</label>
+                                                                    <select name="payment_method" id="payment_method" required>
+                                                                        @foreach($paymentMethods as $pm)
+                                                                            <option value="{{ $pm->name }}">{{ $pm->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('payment_method')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="">Transaction ID</label>
+                                                                    <input type="text" name="transaction_id" id="transaction_id" value="{{ old('transaction_id') }}">
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="">Invoice ID(s)</label>
+                                                                    <input type="text" name="invoice_ids" id="invoice_ids">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Description *</label>
+                                                                    <textarea name="description" id="description" class="tinyEditor" cols="30" rows="10">{{ old('description') }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <button type="submit" class="btn btn-primary btn-lg">Add Transaction</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-4">
                                     <div class="col-md-3">
                                         <div class="whiteAmountBox">
                                             <h4 class="amount">{{ $client->userDetail->default_currency_symbol }}{{ $totalAmountIn }}</h4>
@@ -219,104 +326,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-4">
-                                    <div class="col-12 d-flex justify-content-end">
-                                        <button class="btn btn-dark collapseToggleBtn" type="button" data-bs-toggle="collapse" data-bs-target="#clientTransactionCollapse" aria-expanded="false">Add Transaction <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="collapse" id="clientTransactionCollapse">
-                                            <form action="{{ route('admin.clients.transaction-store') }}" method="POST">
-                                                @csrf
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label for="">Client</label>
-                                                        <select name="user_id" id="user_id">
-                                                            @foreach($clients as $c)
-                                                                <option value="{{ $c->id }}" @if($c->id == $client->id) selected @endif>{{ $c->first_name }} {{ $c->last_name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        @error('user_id')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="">Date *</label>
-                                                        <input type="date" name="date_time" id="date_time" value="{{ old('date_time') }}" required>
-                                                        @error('date_time')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-3">
-                                                        <label for="">Amount in</label>
-                                                        <input type="number" name="amount_in" id="amount_in" step="any" value="{{ old('amount_in') }}">
-                                                        @error('amount_in')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="">Amount out</label>
-                                                        <input type="number" name="amount_out" id="amount_out" step="any" value="{{ old('amount_out') }}">
-                                                        @error('amount_out')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="">Fees</label>
-                                                        <input type="number" name="fees" id="fees" step="any" value="{{ old('fees') }}">
-                                                        @error('fees')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="">Payment Method *</label>
-                                                        <select name="payment_method" id="payment_method" required>
-                                                            @foreach($paymentMethods as $pm)
-                                                                <option value="{{ $pm->name }}">{{ $pm->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        @error('payment_method')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <label for="">Transaction ID</label>
-                                                        <input type="text" name="transaction_id" id="transaction_id" value="{{ old('transaction_id') }}">
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="">Invoice ID(s)</label>
-                                                        <input type="text" name="invoice_ids" id="invoice_ids">
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label for="">Description *</label>
-                                                        <textarea name="description" id="description" class="tinyEditor" cols="30" rows="10">{{ old('description') }}</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <button type="submit" class="btn btn-primary btn-lg">Add Transaction</button>
-                                                    </div>
-                                                </div>
-                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
@@ -368,45 +381,53 @@
                             <div class="tab-pane" id="notesTab" role="tabpanel">
                                 <div class="row my-4">
                                     <div class="col-12 d-flex justify-content-end">
-                                        <button class="btn btn-dark collapseToggleBtn" type="button" data-bs-toggle="collapse" data-bs-target="#clientNotesCollapse" aria-expanded="false">Add Note <i class="fas fa-chevron-down"></i></button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="collapse" id="clientNotesCollapse">
-                                            <form action="{{ route('admin.client-notes.store') }}" method="post">
-                                                @csrf
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label for="">Title *</label>
-                                                        <input type="text" name="title" id="title" value="{{ old('title') }}" require>
-                                                        @error('title')
-                                                        <div class="text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                        @enderror
+
+                                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#clientNewNoteModal">
+                                            Add note
+                                        </button>
+                                        <div class="modal fade" id="clientNewNoteModal" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title">New Client Note</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('admin.client-notes.store') }}" method="post">
+                                                            @csrf
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Title *</label>
+                                                                    <input type="text" name="title" id="title" value="{{ old('title') }}" required>
+                                                                    @error('title')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Content *</label>
+                                                                    <textarea name="the_content" id="the_content" class="tinyEditor">{{ old('content') }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row" style="display: none;">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <input type="text" name="user_id" id="user_id"  value="{{ $client->id }}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <button class="btn btn-primary bt-lg" type="submit">Create</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label for="">Content *</label>
-                                                        <textarea name="content" id="content" required
-                                                                  class="tinyEditor">{{ old('content') }}</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="row" style="display: none;">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <input type="text" name="user_id" id="user_id"  value="{{ $client->id }}">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <button class="btn btn-primary bt-lg" type="submit">Create</button>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -426,7 +447,7 @@
                                                 @foreach($clientNote as $cnote)
                                                     <tr>
                                                         <td>{{ $cnote->title }}</td>
-                                                        <td>{!! Str::limit($cnote->content, 50) !!}</td>
+                                                        <td>{!! Str::limit($cnote->the_content, 50) !!}</td>
                                                         <td>{{ date('d/m/Y', strtotime($cnote->created_at)) }}</td>
                                                         <td>{{ date('d/m/Y', strtotime($cnote->updated_at)) }}</td>
                                                         <td>
@@ -435,13 +456,32 @@
                                                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                                                 </button>
                                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a href="">View</a>
-                                                                    <a href="">Edit</a>
+                                                                    <a type="button" data-bs-toggle="modal" data-bs-target="#clientNoteModal">View</a>
+                                                                    <a type="button" data-bs-toggle="modal" data-bs-target="#clientNoteEditModal">Edit</a>
                                                                     <a class="confirm-delete-btn" href="">Delete</a>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                     </tr>
+                                                    <div class="modal fade" id="clientNoteModal" tabindex="-1" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title">{{ $cnote->title }}</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    {!! $cnote->content !!}
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <a href="" class="btn btn-primary">Edit note</a>
+                                                                    <a href=""
+                                                                       class="btn btn-danger confirm-delete-btn">Delete Note</a>
+                                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" aria-label="close">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 @endforeach
                                             </tbody>
                                         </table>
@@ -453,6 +493,58 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="clientNoteEditModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">{{ $cnote->title }}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('admin.client-notes.update', $cnote->id) }}" method="POST">
+                            @csrf
+                            @method("PUT")
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="">Title *</label>
+                                    <input type="text" name="title" id="title" value="{{ $cnote->title }}" required>
+                                    @error('title')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="">Content *</label>
+                                    <textarea name="the_content" id="the_content" class="tinyEditor">{{ $cnote->the_content }}</textarea>
+                                    @error('the_content')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row" style="display: none;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <input type="text" name="user_id" id="user_id"  value="{{ $client->id }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-primary bt-lg" type="submit">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+
 
 @endsection
