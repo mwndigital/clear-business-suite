@@ -20,16 +20,6 @@ class AdminClientNoteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -61,17 +51,6 @@ class AdminClientNoteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -99,6 +78,9 @@ class AdminClientNoteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $clientNote = ClientNote::where('id', $id);
+        $clientNote->delete();
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has deleted a note for a client');
+        return redirect()->back()->with('success', 'Note has been deleted successfully');
     }
 }

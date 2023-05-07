@@ -21403,17 +21403,25 @@ main.main.full {
   border: 0;
   border-radius: 0;
 }
-.pageMain table tbody tr td .dropdown .dropdown-menu a {
+.pageMain table tbody tr td .dropdown .dropdown-menu a,
+.pageMain table tbody tr td .dropdown .dropdown-menu button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
   color: #003b73;
   display: block;
   font-family: "ralReg", sans-serif;
   font-size: 1rem;
+  outline: none;
   padding: 0.5rem;
   transition: all 0.4s ease-in-out;
+  text-align: left;
   text-decoration: none;
   width: 100%;
 }
-.pageMain table tbody tr td .dropdown .dropdown-menu a:hover {
+.pageMain table tbody tr td .dropdown .dropdown-menu a:hover,
+.pageMain table tbody tr td .dropdown .dropdown-menu button:hover {
   background-color: transparent;
   border: 0;
   border-radius: 0;

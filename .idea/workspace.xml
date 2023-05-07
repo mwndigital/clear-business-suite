@@ -7,9 +7,7 @@
     <list default="true" id="67f4e0c1-d156-49b2-bdcc-9b36a5723dd5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminClientNoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminClientNoteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AdminClientNoteRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AdminClientNoteRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/ClientNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/ClientNote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2023_05_07_164120_create_client_notes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_05_07_164120_create_client_notes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/assets/sass/sitewide-partials/pageMain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/sitewide-partials/pageMain.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/clients/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/clients/show.blade.php" afterDir="false" />
     </list>
@@ -188,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683060642482</updated>
       <workItem from="1683060643682" duration="43771000" />
-      <workItem from="1683384866692" duration="12961000" />
+      <workItem from="1683384866692" duration="15068000" />
     </task>
     <servers />
   </component>

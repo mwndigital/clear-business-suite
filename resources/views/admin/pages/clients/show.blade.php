@@ -381,7 +381,6 @@
                             <div class="tab-pane" id="notesTab" role="tabpanel">
                                 <div class="row my-4">
                                     <div class="col-12 d-flex justify-content-end">
-
                                         <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#clientNewNoteModal">
                                             Add note
                                         </button>
@@ -458,7 +457,11 @@
                                                                 <div class="dropdown-menu dropdown-menu-end">
                                                                     <a type="button" data-bs-toggle="modal" data-bs-target="#clientNoteModal">View</a>
                                                                     <a type="button" data-bs-toggle="modal" data-bs-target="#clientNoteEditModal">Edit</a>
-                                                                    <a class="confirm-delete-btn" href="">Delete</a>
+                                                                    <form action="{{ route('admin.client-notes.destroy', $cnote->id) }}" method="post">
+                                                                        @csrf
+                                                                        @method("delete")
+                                                                        <button type="submit" class="confirm-delete-btn">Delete</button>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -471,13 +474,66 @@
                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    {!! $cnote->content !!}
+                                                                    {!! $cnote->the_content !!}
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <a href="" class="btn btn-primary">Edit note</a>
-                                                                    <a href=""
-                                                                       class="btn btn-danger confirm-delete-btn">Delete Note</a>
-                                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" aria-label="close">Close</button>
+                                                                    <form action="{{ route('admin.client-notes.destroy', $cnote->id) }}" method="post">
+                                                                        @csrf
+                                                                        @method("delete")
+                                                                        <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
+                                                                    </form>
+                                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal fade" id="clientNoteEditModal" tabindex="-1" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title">{{ $cnote->title }}</h1>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form action="{{ route('admin.client-notes.update', $cnote->id) }}" method="POST">
+                                                                        @csrf
+                                                                        @method("PUT")
+                                                                        <div class="row">
+                                                                            <div class="col-12">
+                                                                                <label for="">Title *</label>
+                                                                                <input type="text" name="title" id="title" value="{{ $cnote->title }}" required>
+                                                                                @error('title')
+                                                                                <div class="text-danger">
+                                                                                    {{ $message }}
+                                                                                </div>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-12">
+                                                                                <label for="">Content *</label>
+                                                                                <textarea name="the_content" id="the_content" class="tinyEditor">{{ $cnote->the_content }}</textarea>
+                                                                                @error('the_content')
+                                                                                <div class="text-danger">
+                                                                                    {{ $message }}
+                                                                                </div>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row" style="display: none;">
+                                                                            <div class="row">
+                                                                                <div class="col-12">
+                                                                                    <input type="text" name="user_id" id="user_id"  value="{{ $client->id }}">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-12">
+                                                                                <button class="btn btn-primary bt-lg" type="submit">Update</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -489,56 +545,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="clientNoteEditModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title">{{ $cnote->title }}</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{ route('admin.client-notes.update', $cnote->id) }}" method="POST">
-                            @csrf
-                            @method("PUT")
-                            <div class="row">
-                                <div class="col-12">
-                                    <label for="">Title *</label>
-                                    <input type="text" name="title" id="title" value="{{ $cnote->title }}" required>
-                                    @error('title')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <label for="">Content *</label>
-                                    <textarea name="the_content" id="the_content" class="tinyEditor">{{ $cnote->the_content }}</textarea>
-                                    @error('the_content')
-                                    <div class="text-danger">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row" style="display: none;">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <input type="text" name="user_id" id="user_id"  value="{{ $client->id }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <button class="btn btn-primary bt-lg" type="submit">Update</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
