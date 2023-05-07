@@ -113,7 +113,51 @@
                                     <div class="col-md-4">
                                         <div class="whiteBox">
                                             <h5>Invoices/Billing</h5>
-
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>Paid</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Draft</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Unpaid/Due</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Cancelled</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Refunded</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Collections</strong></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="my-2 ps-2"><strong>Income</strong></p>
+                                            <table class="table ">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>Gross Revenue</strong></td>
+                                                        <td>{{ $client->userDetail->default_currency_symbol }}{{ $totalAmountIn }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Expenses</strong></td>
+                                                        <td>{{ $client->userDetail->default_currency_symbol }}{{ $expenses }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Net Income</strong></td>
+                                                        <td>{{ $client->userDetail->default_currency_symbol }}{{ $netIncome }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -322,7 +366,87 @@
                                 Tickets tab
                             </div>
                             <div class="tab-pane" id="notesTab" role="tabpanel">
-                                Notes tab
+                                <div class="row my-4">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button class="btn btn-dark collapseToggleBtn" type="button" data-bs-toggle="collapse" data-bs-target="#clientNotesCollapse" aria-expanded="false">Add Note <i class="fas fa-chevron-down"></i></button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="collapse" id="clientNotesCollapse">
+                                            <form action="{{ route('admin.client-notes.store') }}" method="post">
+                                                @csrf
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label for="">Title *</label>
+                                                        <input type="text" name="title" id="title" value="{{ old('title') }}" require>
+                                                        @error('title')
+                                                        <div class="text-danger">
+                                                            {{ $message }}
+                                                        </div>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label for="">Content *</label>
+                                                        <textarea name="content" id="content" required
+                                                                  class="tinyEditor">{{ old('content') }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="display: none;">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <input type="text" name="user_id" id="user_id"  value="{{ $client->id }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <button class="btn btn-primary bt-lg" type="submit">Create</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-hover dataTablesTable">
+                                            <thead>
+                                            <tr>
+                                                <th>Title</th>
+                                                <th>Description</th>
+                                                <th>Created</th>
+                                                <th>Updates</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($clientNote as $cnote)
+                                                    <tr>
+                                                        <td>{{ $cnote->title }}</td>
+                                                        <td>{!! Str::limit($cnote->content, 50) !!}</td>
+                                                        <td>{{ date('d/m/Y', strtotime($cnote->created_at)) }}</td>
+                                                        <td>{{ date('d/m/Y', strtotime($cnote->updated_at)) }}</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                                </button>
+                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                    <a href="">View</a>
+                                                                    <a href="">Edit</a>
+                                                                    <a class="confirm-delete-btn" href="">Delete</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

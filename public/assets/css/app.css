@@ -21362,7 +21362,7 @@ main.main.full {
   width: 100%;
 }
 .pageMain table {
-  display: block;
+  display: table;
   overflow-x: auto;
 }
 .pageMain table thead th {
@@ -21479,7 +21479,8 @@ main.main.full {
 }
 .pageMain .whiteBox table tbody tr td {
   color: #000000;
-  font-size: 1rem;
+  font-family: "ralReg", sans-serif;
+  font-size: 0.8rem;
 }
 .pageMain .whiteAmountBox {
   background-color: #ffffff;

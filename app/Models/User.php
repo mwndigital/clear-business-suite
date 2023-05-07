@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Admin\ClientNote;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -50,5 +51,9 @@ class User extends Authenticatable
     }
     public function transaction(){
         return $this->hasMany(Transaction::class);
+    }
+
+    public function clientNote(){
+        return $this->hasMany(ClientNote::class);
     }
 }

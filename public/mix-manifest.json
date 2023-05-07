@@ -7,6 +7,7 @@
     "/assets/css/lead.css": "/assets/css/lead.css",
     "/assets/css/client.css": "/assets/css/client.css",
     "/assets/css/admin.css": "/assets/css/admin.css",
+    "/assets/css/app.css": "/assets/css/app.css",
     "/assets/webfonts/fa-brands-400.ttf": "/assets/webfonts/fa-brands-400.ttf",
     "/assets/webfonts/fa-brands-400.woff2": "/assets/webfonts/fa-brands-400.woff2",
     "/assets/webfonts/fa-regular-400.ttf": "/assets/webfonts/fa-regular-400.ttf",
@@ -174,6 +175,5 @@
     "/assets/fonts/Raleway-Light.ttf": "/assets/fonts/Raleway-Light.ttf",
     "/assets/fonts/Raleway-Medium.ttf": "/assets/fonts/Raleway-Medium.ttf",
     "/assets/fonts/Raleway-Regular.ttf": "/assets/fonts/Raleway-Regular.ttf",
-    "/assets/fonts/Raleway-SemiBold.ttf": "/assets/fonts/Raleway-SemiBold.ttf",
-    "/assets/css/app.css": "/assets/css/app.css"
+    "/assets/fonts/Raleway-SemiBold.ttf": "/assets/fonts/Raleway-SemiBold.ttf"
 }

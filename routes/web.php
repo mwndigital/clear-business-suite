@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminClientController;
+use App\Http\Controllers\Admin\AdminClientNoteController;
 use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminTransactionController;
@@ -36,6 +37,9 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     //Transactions
     Route::resource('transactions', AdminTransactionController::class);
+
+    //Admin Client Notes
+    Route::resource('client-notes', AdminClientNoteController::class);
 
 
     //Settings

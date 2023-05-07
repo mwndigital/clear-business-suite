@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\TransactionStoreRequest;
+use App\Models\Admin\ClientNote;
 use App\Models\Currencies;
 use App\Models\PaymentMethods;
 use App\Models\Transaction;
@@ -96,7 +97,10 @@ class AdminClientController extends Controller
         $totalFees = Transaction::where('user_id', $id)->sum('fees');
         $balance = $totalAmountIn - $totalAmountOut - $totalFees;
         $paymentMethods = PaymentMethods::all();
-        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients'));
+        $expenses = $totalFees + $totalAmountOut;
+        $netIncome = $totalAmountIn - $totalAmountOut - $totalFees;
+        $clientNote = ClientNote::where('user_id', $id)->get();
+        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote'));
     }
 
     public function transactionStore(TransactionStoreRequest $request)

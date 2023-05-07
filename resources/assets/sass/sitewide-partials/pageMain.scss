@@ -69,7 +69,7 @@
     }
 
     table {
-        display: block;
+        display: table;
         overflow-x: auto;
         thead {
             th {
@@ -210,7 +210,9 @@
                 tr {
                     td {
                         color: $b;
-                        font-size: 1rem;
+                        font-family: $ralReg;
+                        font-size: .8rem;
+
                     }
                 }
             }
