@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ActivityController;
 use App\Http\Controllers\Admin\AdminClientController;
 use App\Http\Controllers\Admin\AdminClientNoteController;
 use App\Http\Controllers\Admin\AdminIndexController;
@@ -45,6 +46,10 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     //Settings
     Route::resource('settings', AdminSettingsController::class);
+
+    //Activity log
+    Route::post('activity/clear-log', [ActivityController::class, 'clearLog'])->name('activity.clear-log');
+    Route::resource('activity', ActivityController::class);
 
     //Password Generation Route
     Route::get('generate-password', [PasswordGenerateController::class, 'generatePassword'])->name('generate.password');

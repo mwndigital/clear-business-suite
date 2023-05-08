@@ -1,0 +1,57 @@
+form {
+    .row {
+        margin-bottom: 30px;
+    }
+    label {
+        color: $darkBlue;
+        display: block;
+        font-family: $ralMedium;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: row;
+        input[type='text'],
+        input[type='tel'],
+        input[type='email'],
+        input[type='number'],
+        input[type='password'],
+        input[type='date'],
+        input[type='datetime'],
+        input[type='datetime-local'],
+        select {
+            background-color: $w !important;
+            border: 1px solid $darkBlue;
+            border-radius: 0;
+            box-shadow: none;
+            display: inline-block;
+            height: 40px;
+            outline: none;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            width: 80%;
+        }
+    }
+    input[type='text'],
+    input[type='tel'],
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    input[type='date'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    select {
+        background-color: $w !important;
+        border: 1px solid $darkBlue;
+        border-radius: 0;
+        box-shadow: none;
+        display: block;
+        height: 40px;
+        outline: none;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+.clientSidebar {
+    .tablist {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            border: 0;
+            color: $darkBlue;
+            display: block;
+            font-family: $ralMedium;
+            font-size: 1rem;
+            padding: .5rem;
+            text-decoration: none;
+            @include transition(all .4s ease-in-out);
+            width: 100%;
+
+            &:hover,
+            &.active{
+                background-color: $darkBlue;
+                border: 0;
+                box-shadow: none;
+                color: $w;
+                outline: none;
+                text-decoration: none;
+            }
+        }
+    }
+}

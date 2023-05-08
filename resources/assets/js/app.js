@@ -1,4 +1,5 @@
 require('bootstrap');
+import DataTable from 'datatables.net-dt';
 
 $(document).ready(function(){
     //Sidebar Toggler
@@ -15,7 +16,11 @@ $(document).ready(function(){
         $('.sidebar').removeClass('show');
     };
 
-    $('.dataTablesTable').DataTable();
+    let table = new DataTable('.dataTablesTable', {
+
+    });
+
+
 
     $('.confirm-delete-btn').click(function(event){
         var form =  $(this).closest("form");

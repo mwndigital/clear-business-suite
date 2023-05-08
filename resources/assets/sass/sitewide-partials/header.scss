@@ -6,9 +6,6 @@ header {
         align-items:center;
         display: flex;
         flex-direction: row;
-        .row {
-            width: 100%;
-        }
         .navbar-brand {
             color: $w;
             font-family: $ralBlack;
@@ -19,21 +16,69 @@ header {
 
             }
         }
-        .sidebar-toggler {
-            background-color: transparent;
-            border: 0;
-            border-radius: 0;
-            color: $w;
+        .navbar-toggler {
+
+        }
+        .navbar-nav {
+            li {
+                margin-right: 15px;
+                a {
+                    color: $w;
+                    font-family: $ralReg;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    @include transition(all .4s ease-in-out);
+                    &:hover {
+                        color: $lightBlue;
+                    }
+                }
+                &:last-of-type {
+                    margin-right: 0;
+                }
+                &.dropdown {
+                    a {
+
+                    }
+                    .dropdown-menu {
+                        background-color: #ffffff;
+                        border: 0;
+                        border-radius:0;
+                        -webkit-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        -moz-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        li {
+                            display: block;
+                            width: 100%;
+                            a {
+                                color: $b;
+                                text-decoration: none;
+                                @include transition(all .4s ease-in-out);
+
+                                &:hover {
+                                    background-color: transparent;
+                                    border: 0;
+                                    box-shadow: none;
+                                    color: $darkBlue;
+                                    outline: none;
+                                }
+                            }
+                            .dropdown-divider {
+                                border-top: 1px solid $darkBlue;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .additionalMenu {
-            margin: 0;
+            margin: 0 0 0 auto;
             padding: 0;
             li {
                 margin-right: 15px;
                 a {
                     color: $w;
                     font-family: $ralReg;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     text-decoration: none;
                     @include transition(all .4s ease-in-out);
                     &:hover {

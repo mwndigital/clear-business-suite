@@ -14,7 +14,7 @@ class AdminSettingsController extends Controller
      */
     public function index()
     {
-        //
+        return view("admin.pages.settings.index");
     }
 
     /**

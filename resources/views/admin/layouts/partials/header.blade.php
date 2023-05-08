@@ -22,7 +22,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
         <script src="{{ asset('assets/js/chart.js') }}"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
         <script src="{{ asset('assets/js/admin.js') }}"></script>
@@ -40,6 +39,5 @@
             @include('sweetalert::alert')
             <div class="container-fluid">
                 <div class="row">
-                    @include('admin.layouts.partials.sidebar')
                     <main class="main">
 

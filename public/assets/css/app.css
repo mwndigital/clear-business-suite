@@ -21133,9 +21133,6 @@ header .navbar {
   display: flex;
   flex-direction: row;
 }
-header .navbar .row {
-  width: 100%;
-}
 header .navbar .navbar-brand {
   color: #ffffff;
   font-family: "ralBlack", sans-serif;
@@ -21143,14 +21140,49 @@ header .navbar .navbar-brand {
   letter-spacing: 2px;
   margin-right: 40px;
 }
-header .navbar .sidebar-toggler {
-  background-color: transparent;
+header .navbar .navbar-nav li {
+  margin-right: 15px;
+}
+header .navbar .navbar-nav li a {
+  color: #ffffff;
+  font-family: "ralReg", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+header .navbar .navbar-nav li a:hover {
+  color: #60a3d9;
+}
+header .navbar .navbar-nav li:last-of-type {
+  margin-right: 0;
+}
+header .navbar .navbar-nav li.dropdown .dropdown-menu {
+  background-color: #ffffff;
   border: 0;
   border-radius: 0;
-  color: #ffffff;
+  box-shadow: 4px 9px 20px -10px rgba(0, 0, 0, 0.5);
+}
+header .navbar .navbar-nav li.dropdown .dropdown-menu li {
+  display: block;
+  width: 100%;
+}
+header .navbar .navbar-nav li.dropdown .dropdown-menu li a {
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+header .navbar .navbar-nav li.dropdown .dropdown-menu li a:hover {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  color: #003b73;
+  outline: none;
+}
+header .navbar .navbar-nav li.dropdown .dropdown-menu li .dropdown-divider {
+  border-top: 1px solid #003b73;
 }
 header .navbar .additionalMenu {
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
 }
 header .navbar .additionalMenu li {
@@ -21159,7 +21191,7 @@ header .navbar .additionalMenu li {
 header .navbar .additionalMenu li a {
   color: #ffffff;
   font-family: "ralReg", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.4s ease-in-out;
 }
@@ -21199,18 +21231,8 @@ main.main {
   margin-left: auto;
   padding: 6rem 1rem 0 1rem;
   transition: all 0.4s ease-in-out;
-  width: 85%;
-}
-main.main.full {
-  width: 100%;
 }
 
-@media screen and (max-width: 993px) {
-  main.main {
-    margin-left: 0;
-    width: 100%;
-  }
-}
 .sidebar {
   background-color: #ffffff;
   height: 100vh;
@@ -21361,9 +21383,16 @@ main.main.full {
   padding-right: 0.5rem;
   width: 100%;
 }
+.pageMain .dataTables_wrapper {
+  min-height: 500px;
+}
+.pageMain .dataTables_wrapper table {
+  min-height: 500px;
+}
 .pageMain table {
-  display: table;
+  display: block;
   overflow-x: auto;
+  width: 100%;
 }
 .pageMain table thead th {
   color: #003b73;
@@ -21429,53 +21458,35 @@ main.main.full {
   outline: none;
   text-decoration: none;
 }
-.pageMain table.rowLinks {
-  display: block;
-  overflow-x: auto;
-}
-.pageMain table.rowLinks thead {
-  min-width: 200px;
-}
-.pageMain table.rowLinks tbody tr:hover {
-  cursor: pointer;
-}
-.pageMain .tabpanel .tablist {
-  border-bottom: 1px solid #cccccc;
+.pageMain .clientSidebar .tablist {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  overflow-x: auto;
-  overflow-y: hidden;
+  flex-direction: column;
 }
-.pageMain .tabpanel .tablist a {
-  border: 1px solid #cccccc;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.pageMain .clientSidebar .tablist a {
+  border: 0;
   color: #003b73;
+  display: block;
   font-family: "ralMedium", sans-serif;
   font-size: 1rem;
-  margin-bottom: -1px;
-  padding: 0.5rem 1rem;
-  transition: all 0.4s ease-in-out;
+  padding: 0.5rem;
   text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
 }
-.pageMain .tabpanel .tablist a:hover, .pageMain .tabpanel .tablist a.active {
+.pageMain .clientSidebar .tablist a:hover, .pageMain .clientSidebar .tablist a.active {
   background-color: #003b73;
-  border: 1px solid #003b73;
+  border: 0;
+  box-shadow: none;
   color: #ffffff;
-}
-.pageMain .tabpanel .tab-content .tab-pane {
-  border: 1px solid #cccccc;
-  border-top: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding: 1rem;
+  outline: none;
+  text-decoration: none;
 }
 .pageMain .whiteBox {
   background-color: #ffffff;
   border: 0;
   border-radius: 10px;
   margin: 0 0 30px 0;
+  overflow-x: auto;
   padding: 0.75rem;
 }
 .pageMain .whiteBox h5, .pageMain .whiteBox .h5 {
@@ -21484,11 +21495,6 @@ main.main.full {
   font-size: 1.75rem;
   margin-bottom: 20px;
   text-align: center;
-}
-.pageMain .whiteBox table tbody tr td {
-  color: #000000;
-  font-family: "ralReg", sans-serif;
-  font-size: 0.8rem;
 }
 .pageMain .whiteAmountBox {
   background-color: #ffffff;
@@ -21533,11 +21539,38 @@ main.main.full {
   font-size: 2rem;
   line-height: 2.5rem;
 }
-.pageMain .dataTables_wrapper {
-  min-height: 500px;
+.pageMain .whiteLinkBox {
+  align-items: center;
+  background-color: #ffffff;
+  border: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  justify-content: center;
+  margin: 0 0 30px 0;
 }
-.pageMain .dataTables_wrapper table {
-  min-height: 500px;
+.pageMain .whiteLinkBox a {
+  align-items: center;
+  color: #003b73;
+  display: flex;
+  flex-direction: column;
+  font-family: "ralSemiBold", sans-serif;
+  font-size: 1.5rem;
+  height: 150px;
+  justify-content: center;
+  outline: none;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+}
+.pageMain .whiteLinkBox a:hover {
+  box-shadow: none;
+  color: #0074b7;
+  outline: none;
+  text-decoration: none;
 }
 
 .dashboardWelcomeBanner .inner {

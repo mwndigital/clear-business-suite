@@ -2,16 +2,5 @@ main.main {
     margin-left: auto;
     padding: 6rem 1rem 0 1rem;
     @include transition(all .4s ease-in-out);
-    width: calc(100% - 15%);
 
-    &.full {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 993px) {
-    main.main {
-        margin-left: 0;
-        width: 100%;
-    }
 }
