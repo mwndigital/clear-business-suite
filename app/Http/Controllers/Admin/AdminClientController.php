@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\UserDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Monarobase\CountryList\CountryListFacade;
 use Torann\Currency\Currency;
 
@@ -100,7 +101,9 @@ class AdminClientController extends Controller
         $expenses = $totalFees + $totalAmountOut;
         $netIncome = $totalAmountIn - $totalAmountOut - $totalFees;
         $clientNote = ClientNote::where('user_id', $id)->get();
-        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote'));
+        $countries = CountryListFacade::getList('en');
+        $currencies = Currencies::all();
+        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote', 'countries', 'currencies'));
     }
 
     public function transactionStore(TransactionStoreRequest $request)
@@ -140,16 +143,48 @@ class AdminClientController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //This handles first name, last name and email
     public function update(Request $request, $id)
     {
-        //
+         $client = User::find($id);
+         $client->first_name = $request->input('first_name');
+         $client->last_name = $request->input('last_name');
+         $client->save();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated ' . $request->input('first_name') . ' ' . $request->input('last_name') . "'s main details");
+        return redirect()->back()->with('success', 'User main details updated successfully');
+    }
+
+    public function updateEmailAddress(Request $request, $id) {
+        $client = User::find($id);
+        $client->email = $request->input('email');
+        $client->save();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated a users email address');
+        return redirect()->back()->with('success', 'User email address has been updated');
+    }
+
+    public function updateUserDetails(Request $request, $id) {
+        $client = User::find($id);
+
+        $client->userDetail()->update([
+            'company_name' => $request->input('company_name'),
+            'phone_number' => $request->input('phone_number'),
+            'website' => $request->input('website'),
+            'address_line_one' => $request->input('address_line_one'),
+            'address_line_two' => $request->input('address_line_two'),
+            'town_city' => $request->input('town_city'),
+            'state_region' => $request->input('state_region'),
+            'zip_postcode' => $request->input('zip_postcode'),
+            'country' => $request->input('country'),
+            'default_payment_method' => $request->input('default_payment_method'),
+            'default_currency' => $request->input('default_currency'),
+            'default_currency_symbol' => $request->input('default_currency_symbol'),
+
+        ]);
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated a users additional details');
+        return redirect()->back()->with('success', 'User details updated successfully');
     }
 
     /**

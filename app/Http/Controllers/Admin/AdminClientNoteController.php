@@ -67,7 +67,7 @@ class AdminClientNoteController extends Controller
 
         activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated a note for client ' . $request->input('user_id'));
 
-        return redirect()->back()->with('success', 'New note has been updated successfull');
+        return redirect()->back()->with('success', 'New note has been updated successfully');
     }
 
     /**

@@ -46,13 +46,17 @@ header {
                         -webkit-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         -moz-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        padding: .5rem 1rem;
                         li {
                             display: block;
                             width: 100%;
                             a {
                                 color: $b;
+                                display: block;
                                 text-decoration: none;
+                                padding: .5rem 0;
                                 @include transition(all .4s ease-in-out);
+                                width: 100%;
 
                                 &:hover {
                                     background-color: transparent;
@@ -99,6 +103,7 @@ header {
                         -webkit-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         -moz-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
+                        padding: .5rem;
                         li {
                             display: block;
                             width: 100%;

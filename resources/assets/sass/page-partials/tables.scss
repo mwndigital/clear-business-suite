@@ -21,9 +21,14 @@ table {
     tbody {
         tr {
             td {
-                color: $darkBlue;
+                color: $b;
                 font-family: $ralReg;
-                font-size: 1rem;
+                font-size: .9rem;
+                min-width: 175px;
+
+                strong {
+                    font-family: $ralMedium;
+                }
                 .dropdown {
                     button.dropdown-toggle {
                         background-color: transparent;
@@ -82,6 +87,13 @@ table {
                         }
                     }
                 }
+            }
+        }
+    }
+    &.rowLinks {
+        tbody {
+            tr:hover {
+                cursor: pointer;
             }
         }
     }

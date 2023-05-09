@@ -21099,6 +21099,30 @@ body {
   background-color: #f3f3f3;
 }
 
+a.darkBlueBtn,
+button.darkBlueBtn,
+input.darkBlueBtn {
+  background-color: #003b73;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "ralSemiBold", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+a.darkBlueBtn:hover,
+button.darkBlueBtn:hover,
+input.darkBlueBtn:hover {
+  background-color: #0055a6;
+  border: 0;
+  box-shadow: none;
+  color: #ffffff;
+  outline: none;
+  text-decoration: none;
+}
+
 a.darkBlueBtnXl,
 button.darkBlueBtnXl,
 input.darkBlueBtnXl {
@@ -21161,6 +21185,7 @@ header .navbar .navbar-nav li.dropdown .dropdown-menu {
   border: 0;
   border-radius: 0;
   box-shadow: 4px 9px 20px -10px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
 }
 header .navbar .navbar-nav li.dropdown .dropdown-menu li {
   display: block;
@@ -21168,8 +21193,11 @@ header .navbar .navbar-nav li.dropdown .dropdown-menu li {
 }
 header .navbar .navbar-nav li.dropdown .dropdown-menu li a {
   color: #000000;
+  display: block;
   text-decoration: none;
+  padding: 0.5rem 0;
   transition: all 0.4s ease-in-out;
+  width: 100%;
 }
 header .navbar .navbar-nav li.dropdown .dropdown-menu li a:hover {
   background-color: transparent;
@@ -21206,6 +21234,7 @@ header .navbar .additionalMenu li.dropdown .dropdown-menu {
   border: 0;
   border-radius: 0;
   box-shadow: 4px 9px 20px -10px rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
 }
 header .navbar .additionalMenu li.dropdown .dropdown-menu li {
   display: block;
@@ -21328,6 +21357,13 @@ main.main {
   padding: 2rem;
   width: 100%;
 }
+.pageMain .inner .sectionTitle {
+  color: #0074b7;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
 .pageMain form .row {
   margin-bottom: 30px;
 }
@@ -21372,7 +21408,7 @@ main.main {
 .pageMain form input[type=datetime],
 .pageMain form input[type=datetime-local],
 .pageMain form select {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   border: 1px solid #003b73;
   border-radius: 0;
   box-shadow: none;
@@ -21382,6 +21418,14 @@ main.main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: 100%;
+}
+.pageMain form input:-moz-read-only {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+.pageMain form input:read-only {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 .pageMain .dataTables_wrapper {
   min-height: 500px;
@@ -21401,9 +21445,13 @@ main.main {
   min-width: 200px;
 }
 .pageMain table tbody tr td {
-  color: #003b73;
+  color: #000000;
   font-family: "ralReg", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  min-width: 175px;
+}
+.pageMain table tbody tr td strong {
+  font-family: "ralMedium", sans-serif;
 }
 .pageMain table tbody tr td .dropdown button.dropdown-toggle {
   background-color: transparent;
@@ -21458,6 +21506,9 @@ main.main {
   outline: none;
   text-decoration: none;
 }
+.pageMain table.rowLinks tbody tr:hover {
+  cursor: pointer;
+}
 .pageMain .clientSidebar .tablist {
   display: flex;
   flex-direction: column;
@@ -21486,15 +21537,20 @@ main.main {
   border: 0;
   border-radius: 10px;
   margin: 0 0 30px 0;
-  overflow-x: auto;
+  overflow: hidden;
   padding: 0.75rem;
 }
 .pageMain .whiteBox h5, .pageMain .whiteBox .h5 {
   color: #003b73;
   font-family: "ralSemiBold", sans-serif;
-  font-size: 1.75rem;
-  margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
   text-align: center;
+}
+.pageMain .whiteBox table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
 }
 .pageMain .whiteAmountBox {
   background-color: #ffffff;

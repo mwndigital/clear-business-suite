@@ -43,7 +43,7 @@ form {
     input[type='datetime'],
     input[type='datetime-local'],
     select {
-        background-color: $w !important;
+        background-color: $w;
         border: 1px solid $darkBlue;
         border-radius: 0;
         box-shadow: none;
@@ -53,5 +53,9 @@ form {
         padding-left: .5rem;
         padding-right: .5rem;
         width: 100%;
+    }
+    input:read-only {
+        background-color: lighten($b, 80%);
+        cursor: not-allowed;
     }
 }
