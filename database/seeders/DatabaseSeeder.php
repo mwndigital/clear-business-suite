@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
             CurrenciesSeeder::class,
             PaymentMethodsSeeder::class,
             ClientSeeder::class,
+            ProjectTypeSeeder::class,
+            ProjectStatusesSeeder::class,
+            ProjectBillingTypeSeeder::class,
         ]);
     }
 }

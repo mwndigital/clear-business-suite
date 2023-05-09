@@ -21186,6 +21186,8 @@ header .navbar .navbar-nav li.dropdown .dropdown-menu {
   border-radius: 0;
   box-shadow: 4px 9px 20px -10px rgba(0, 0, 0, 0.5);
   padding: 0.5rem 1rem;
+  min-width: 200px;
+  width: auto;
 }
 header .navbar .navbar-nav li.dropdown .dropdown-menu li {
   display: block;

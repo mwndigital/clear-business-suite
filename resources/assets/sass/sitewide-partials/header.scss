@@ -47,6 +47,8 @@ header {
                         -moz-box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         box-shadow: 4px 9px 20px -10px rgba(0,0,0,0.5);
                         padding: .5rem 1rem;
+                        min-width: 200px;
+                        width: auto;
                         li {
                             display: block;
                             width: 100%;

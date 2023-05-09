@@ -8,9 +8,24 @@
         </button>
         <div class="collapse navbar-collapse" id="mainApplicationNavbar">
             <ul class="navbar-nav">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" role='button' data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-plus"></i></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('admin.clients.create') }}">Add new Client</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.transactions.create') }}">Add new Transaction</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.projects.create') }}">Add Project</a>
+                        </li>
+                    </ul>
+                </li>
                 <li>
                     <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                 </li>
+
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Clients
@@ -24,14 +39,16 @@
                 </li>
                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Transactions
+                        Billing
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ route('admin.transactions.index') }}">All Transactions</a>
+                            <a href="{{ route('admin.transactions.index') }}">Transactions</a>
                         </li>
-                        <li><a href="{{ route('admin.transactions.create') }}">Add New Transaction</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{ route('admin.projects.index') }}">Projects</a>
                 </li>
             </ul>
             <ul class="list-inline additionalMenu">

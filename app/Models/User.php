@@ -56,4 +56,8 @@ class User extends Authenticatable
     public function clientNote(){
         return $this->hasMany(ClientNote::class);
     }
+
+    public function project(){
+        return $this->hasMany(Project::class);
+    }
 }
