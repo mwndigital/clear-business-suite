@@ -51,7 +51,13 @@
                                     <td>{{ $project->id }}</td>
                                     <td>{{ $project->name }}</td>
                                     <td>{{ date('d/m/Y', strtotime($project->start_date)) }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($project->due_date)) }}</td>
+                                    <td>
+                                        @if($project->due_date != NULL)
+                                            {{ date('d/m/Y', strtotime($project->due_date)) }}
+                                        @else
+                                            --
+                                        @endif
+                                    </td>
                                     <td>{{ $project->project_status }}</td>
                                     <td>{{ $project->user->first_name }} {{ $project->user->last_name }}</td>
                                     <th>{{ $project->progress }}%</th>
@@ -62,7 +68,7 @@
                                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-end">
-                                                <a href="">View</a>
+                                                <a href="{{ route('admin.projects.show', $project->id) }}">View</a>
                                                 <a href="">Edit</a>
                                                 <a href="">Delete</a>
                                             </div>

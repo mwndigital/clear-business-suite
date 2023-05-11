@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('project_status');
             $table->integer('progress')->default('0')->nullable();
             $table->string('billing_type');
-            $table->decimal('total_rate', 2, 2)->nullable();
+            $table->decimal('total_rate', 9, 2)->nullable();
             $table->decimal('rate_per_hour', 9, 2)->nullable();
             $table->integer('estimated_hours')->nullable();
             $table->date('start_date');

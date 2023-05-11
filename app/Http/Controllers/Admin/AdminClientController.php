@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClientStoreRequest;
 use App\Http\Requests\TransactionStoreRequest;
+use App\Models\Admin\AdminProject;
 use App\Models\Admin\ClientNote;
 use App\Models\Currencies;
 use App\Models\PaymentMethods;
@@ -103,7 +104,8 @@ class AdminClientController extends Controller
         $clientNote = ClientNote::where('user_id', $id)->get();
         $countries = CountryListFacade::getList('en');
         $currencies = Currencies::all();
-        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote', 'countries', 'currencies'));
+        $clientProjects = AdminProject::where('user_id', $id);
+        return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote', 'countries', 'currencies', 'clientProjects'));
     }
 
     public function transactionStore(TransactionStoreRequest $request)

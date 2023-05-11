@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectStoreRequest;
 use App\Models\Admin\AdminProject;
 use App\Models\Admin\ProjectBillingType;
 use App\Models\Admin\ProjectStatus;
@@ -10,6 +11,7 @@ use App\Models\Admin\ProjectType;
 use App\Models\PaymentMethods;
 use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class AdminProjectController extends Controller
 {
@@ -44,9 +46,27 @@ class AdminProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectStoreRequest $request)
     {
-        //
+        AdminProject::create([
+            'name' => $request->name,
+            'project_type' => $request->project_type,
+            'project_status' => $request->project_status,
+            'progress' => $request->input('progress'),
+            'billing_type' => $request->billing_type,
+            'total_rate' => $request->input('total_rate'),
+            'rate_per_hour' => $request->input('rate_per_hour'),
+            'estimated_hours' => $request->input('estimated_hours'),
+            'start_date' => $request->start_date,
+            'due_date' => $request->input('due_date'),
+            'description' => $request->input('description'),
+            'user_id' => $request->input('user_id'),
+            'project_notes_id' => $request->input('project_notes_id'),
+            'project_tasks_id' => $request->input('project_tasks_id'),
+        ]);
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' created project ' . $request->name);
+        return redirect('admin/projects')->with('success', 'New project created successfully');
     }
 
     /**
@@ -57,7 +77,9 @@ class AdminProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = AdminProject::find($id);
+
+        return view('admin.pages.projects.show', compact('project'));
     }
 
     /**

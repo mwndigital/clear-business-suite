@@ -21329,6 +21329,31 @@ main.main {
   padding: 2rem;
   width: 100%;
 }
+.pageHero .inner .sub-title {
+  color: #0074b7;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.pageHero .inner .sub-title a {
+  color: #0074b7;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+.pageHero .inner .sub-title a .fa-chevron-right {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  transition: all 0.4s ease-in-out;
+}
+.pageHero .inner .sub-title a:hover {
+  box-shadow: none;
+  color: #60a3d9;
+  outline: none;
+  text-decoration: none;
+}
+.pageHero .inner .sub-title a:hover .fa-chevron-right {
+  margin-left: 10px;
+}
 .pageHero .inner h1, .pageHero .inner .h1 {
   color: #003b73;
   font-family: "ralBold", sans-serif;
@@ -21512,11 +21537,13 @@ main.main {
   cursor: pointer;
 }
 .pageMain .clientSidebar .tablist {
+  border-bottom: 0;
   display: flex;
   flex-direction: column;
 }
 .pageMain .clientSidebar .tablist a {
   border: 0;
+  border-radius: 0;
   color: #003b73;
   display: block;
   font-family: "ralMedium", sans-serif;
@@ -21629,6 +21656,33 @@ main.main {
   color: #0074b7;
   outline: none;
   text-decoration: none;
+}
+.pageMain .tablist {
+  border-bottom: 1px solid #003b73;
+  padding-bottom: 5px;
+}
+.pageMain .tablist a {
+  background-color: transparent;
+  border: 1px solid #003b73;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #003b73;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1rem;
+  margin-right: 15px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+.pageMain .tablist a:hover, .pageMain .tablist a.active {
+  background-color: #003b73;
+  box-shadow: none;
+  color: #ffffff;
+  outline: none;
+  text-decoration: none;
+}
+.pageMain .tab-content {
+  padding: 1rem 0;
 }
 
 .dashboardWelcomeBanner .inner {

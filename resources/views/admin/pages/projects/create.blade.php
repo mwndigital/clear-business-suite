@@ -14,6 +14,15 @@
             </div>
         </div>
     </section>
+    @if($errors->any())
+        <div class="flex flex-row alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <section class="pageMain">
         <div class="container">
             <div class="row">
@@ -25,6 +34,11 @@
                                 <div class="col-md-6">
                                     <label for="">Project Name *</label>
                                     <input type="text" name="name" id="name" value="{{ old('name') }}" required>
+                                    @error('project_name')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Project Type *</label>
@@ -36,6 +50,11 @@
                                             </option>
                                         @endforeach
                                     </select>
+                                    @error('project_type')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">
@@ -51,6 +70,11 @@
                                             </option>
                                         @endforeach
                                     </select>
+                                    @error('user_id')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">
@@ -62,11 +86,21 @@
                                             <option value="{{ $projectStatus->name }}">{{ $projectStatus->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('project_status')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Progress</label>
                                     <input type="number" name="progress" id="progress" step="any" value="{{ old('progress') }}">
                                 </div>
+                                @error('progress')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -77,40 +111,75 @@
                                             <option value="{{ $bt->name }}">{{ $bt->name }}</option>
                                         @endforeach
                                     </select>
+                                    @error('billing_type')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <div class="total_rate" style="display: none;">
                                         <label for="">Total Rate</label>
                                         <input type="number" name="total_rate" id="total_rate" value="{{ old('total_rate') }}" step="any">
+
                                     </div>
                                     <div class="rate_per_hour" style="display: none;">
                                         <label for="">Rate per hour</label>
                                         <input type="number" name="rate_per_hour" id="rate_per_hour" step="any" value="{{ old('rate_per_hour') }}">
-                                    </div>
 
+                                    </div>
+                                    @error('rate_per_hour')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                    @error('total_rate')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <label for="">Estimated Hours</label>
                                     <input type="number" name="estimated_hours" id="estimated_hours" step="any" value="{{ old('estimated_hours') }}">
+                                    @error('edtimated_hours')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
-
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">Start Date *</label>
                                     <input type="date" name="start_date" id="start_date" value="{{ old('start_date') }}" required>
+                                    @error('start_date')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Due Date</label>
                                     <input type="date" name="due_date" id="due_date" value="{{ old('due_date') }}">
+                                    @error('due_date')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <label for="">Description</label>
                                     <textarea name="description" id="description" cols="30" rows="10" class="tinyEditor">{{ old('description') }}</textarea>
+                                    @error('description')
+                                    <div class="text-danger">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="row">

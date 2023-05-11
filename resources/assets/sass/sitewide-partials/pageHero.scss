@@ -7,6 +7,38 @@
         padding: 2rem;
         width: 100%;
 
+        .sub-title {
+            color: $mediumBlue;
+            font-family: $ralMedium;
+            font-size: 1rem;
+            margin-bottom: 0;
+
+            a {
+                color: $mediumBlue;
+                text-decoration: none;
+                @include transition(all .4s ease-in-out);
+
+                .fa-chevron-right {
+                    font-size: .8rem;
+                    margin-left: 5px;
+                    @include transition(all .4s ease-in-out);
+                }
+
+                &:hover {
+                    box-shadow: none;
+                    color: $lightBlue;
+                    outline: none;
+                    text-decoration: none;
+
+                    .fa-chevron-right {
+                        margin-left: 10px;
+                    }
+                }
+
+
+            }
+        }
+
         h1 {
             color: $darkBlue;
             font-family: $ralBold;

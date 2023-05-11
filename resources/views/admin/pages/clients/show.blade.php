@@ -418,7 +418,49 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="projectsTab" role="tabpanel">
-                            Projects tab
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-hover dataTablesTable ">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Start Date</th>
+                                                <th>Deadline</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($clientProjects as $project)
+                                                <tr>
+                                                    <td>{{ $project->id }}</td>
+                                                    <td>{{ $project->name }}</td>
+                                                    <td>{{ date('d/m/Y', strtotime($project->start_date)) }}</td>
+                                                    <td>{{ date('d/m/Y', strtotime($project->due_date)) }}</td>
+                                                    <td>{{ $project->project_status }}</td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <a href="">View</a>
+                                                                <a href="">Edit</a>
+                                                                <form action="" method="post">
+                                                                    @csrf
+                                                                    @method("delete")
+                                                                    <button type="submit" class="confirm-delete-btn">Delete</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                         <div class="tab-pane" id="tasksTab" role="tabpanel">
                             Tasks tab
