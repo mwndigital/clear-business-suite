@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminClientController;
 use App\Http\Controllers\Admin\AdminClientNoteController;
 use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\Admin\AdminProjectController;
+use App\Http\Controllers\Admin\AdminProjectTasksController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminTransactionController;
 use App\Http\Controllers\Client\ClientIndexController;
@@ -48,6 +49,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
 
     //Projects
     Route::resource('projects', AdminProjectController::class);
+    Route::resource('projects-tasks', AdminProjectTasksController::class);
 
 
     //Settings

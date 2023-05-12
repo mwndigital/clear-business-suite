@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             ProjectTypeSeeder::class,
             ProjectStatusesSeeder::class,
             ProjectBillingTypeSeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }

@@ -33,7 +33,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('project_notes_id')->references('id')->on('project_notes');
         });
     }
 

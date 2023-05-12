@@ -9,6 +9,7 @@ use App\Models\Admin\ProjectBillingType;
 use App\Models\Admin\ProjectStatus;
 use App\Models\Admin\ProjectType;
 use App\Models\PaymentMethods;
+use App\Models\ProjectTasks;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -78,8 +79,9 @@ class AdminProjectController extends Controller
     public function show($id)
     {
         $project = AdminProject::find($id);
-
-        return view('admin.pages.projects.show', compact('project'));
+        $allProjects = AdminProject::all();
+        $projectTasks = ProjectTasks::where('project_id', $id)->get();
+        return view('admin.pages.projects.show', compact('project', 'allProjects', 'projectTasks'));
     }
 
     /**

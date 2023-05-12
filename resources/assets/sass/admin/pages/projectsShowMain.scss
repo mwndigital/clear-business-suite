@@ -1,0 +1,33 @@
+.projectShowMain {
+
+    table {
+        tbody {
+            tr {
+                td {
+                    a {
+                        color: $b;
+                        text-decoration: none;
+                        @include transition(all .4s ease-in-out);
+
+                        &:hover {
+                            box-shadow: none;
+                            color: $mediumBlue;
+                            outline: none;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h3 {
+        color: $darkBlue;
+        font-family: $ralSemiBold;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .progress {
+        margin-bottom: 40px;
+    }
+}

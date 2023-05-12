@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\ProjectTasks;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -27,10 +28,10 @@ class AdminProject extends Model
         'project_tasks_id',
     ];
 
-    public function projectNote() {
-        return $this->hasMany(ProjectNotes::class);
-    }
     public function user() {
         return $this->belongsTo(User::class);
+    }
+    public function tasks() {
+        return $this->hasMany(ProjectTasks::class);
     }
 }

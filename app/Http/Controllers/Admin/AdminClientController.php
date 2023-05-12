@@ -104,7 +104,7 @@ class AdminClientController extends Controller
         $clientNote = ClientNote::where('user_id', $id)->get();
         $countries = CountryListFacade::getList('en');
         $currencies = Currencies::all();
-        $clientProjects = AdminProject::where('user_id', $id);
+        $clientProjects = AdminProject::where('user_id', $id)->get();
         return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote', 'countries', 'currencies', 'clientProjects'));
     }
 
