@@ -447,7 +447,234 @@
                                 Milestones
                             </div>
                             <div class="tab-pane" id="notesTab" role="tabpanel">
-                                Notes
+                                <div class="row mb-4">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#projectCreateNotesModal">
+                                            Create Note
+                                        </button>
+                                        <div class="modal fade" id="projectCreateNotesModal" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title">Create Note</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('admin.projects-notes.store') }}" method="POST">
+                                                            @csrf
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Title *</label>
+                                                                    <input type="text" name="title" id="title" value="{{ old('title') }}" required>
+                                                                    @error('title')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Content *</label>
+                                                                    <textarea name="the_content" id="the_content" class="tinyEditor" cols="30" rows="10" required>{{ old('the_content') }}</textarea>
+                                                                    @error('the_content')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Project *</label>
+                                                                    <select name="project_id" id="project_id" required>
+                                                                        @foreach($allProjects as $project)
+                                                                            <option value="{{ $project->id }}">{{ $project->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Show this note to client?</label>
+                                                                    <select name="show_to_client" id="show_to_client" required>
+                                                                        <option value="1">Yes</option>
+                                                                        <option value="0" selected>No</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <button type="submit" class="btn btn-primary btn-lg">Add Note</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <table class="table table-hover dataTablesTable rowLinks w-100">
+                                            <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Title</th>
+                                                <th>Content</th>
+                                                <th>Show to client?</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($projectNotes as $note)
+                                                <tr>
+                                                    <td>{{ $note->id }}</td>
+                                                    <td>{{ $note->title }}</td>
+                                                    <td>{!! Str::limit($note->the_content, 50) !!}</td>
+                                                    <td>
+                                                        @if($note->show_to_client == true)
+                                                            Yes
+                                                        @else
+                                                            No
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu-end">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target="#projectNotesViewModal">View</button>
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target="#projectNotesEditModal">Edit</button>
+                                                                <form action="{{ route('admin.projects-notes.destroy', $note->id) }}" method="post">
+                                                                    @csrf
+                                                                    @method("delete")
+                                                                    <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                @if($projectNotes->isNotEmpty())
+                                    <div class="modal fade" id="projectNotesEditModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1>Edit Task {{ $note->title }}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('admin.projects-notes.update', $note->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Title *</label>
+                                                                <input type="text" name="title" id="title" value="{{ old('title', $note->title) }}" required>
+                                                                @error('title')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Content *</label>
+                                                                <textarea name="the_content" id="the_content" class="tinyEditor" cols="30" rows="10" required>{{ $note->the_content }}</textarea>
+                                                                @error('the_content')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Project *</label>
+                                                                <select name="project_id" id="project_id" required>
+                                                                    @foreach($allProjects as $project)
+                                                                        <option value="{{ $project->id }}" @if($project->id == $note->project_id) selected @endif>{{ $project->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Show this note to client?</label>
+                                                                <select name="show_to_client" id="show_to_client">
+                                                                    @foreach(['0', '1'] as $show_to_client)
+                                                                        @if($show_to_client == $note->show_to_client)
+                                                                            <option value="{{ $show_to_client }}" selected>@if($show_to_client == 0) No @else Yes @endif</option>
+                                                                        @else
+                                                                            <option value="{{ $show_to_client }}">@if($show_to_client == 0) No @else Yes @endif</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Update Note</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="projectNotesViewModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title">{{ $note->title }}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                                </div>
+                                                <div class="modal-body w-100 d-block">
+                                                    <table class="table w-100 d-block">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><strong>#</strong></td>
+                                                            <td>{{ $note->id }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Title</strong></td>
+                                                            <td>{{ $note->title }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Content</strong></td>
+                                                            <td>{!! $note->the_content !!}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Show to client</strong></td>
+                                                            <td>
+                                                                @if($note->show_to_client == true)
+                                                                    Yes
+                                                                @else
+                                                                    No
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Created</strong></td>
+                                                            <td>{{ date('d/m/Y', strtotime($note->created_at)) }}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                             <div class="tab-pane" id="filesTab" role="tabpanel">
                                 Files

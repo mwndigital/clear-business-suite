@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\ProjectNotes;
 use App\Models\ProjectTasks;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -33,5 +34,9 @@ class AdminProject extends Model
     }
     public function tasks() {
         return $this->hasMany(ProjectTasks::class);
+    }
+
+    public function notes() {
+        return $this->hasMany(ProjectNotes::class);
     }
 }

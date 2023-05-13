@@ -64,6 +64,12 @@
                         <li>
                             <a href="{{ route('admin.projects-tasks.create') }}">Create Project Task</a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.projects-notes.index') }}">All Project Notes</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.projects-notes.create') }}">Add Project Note</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
