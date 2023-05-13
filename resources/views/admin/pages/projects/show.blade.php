@@ -191,9 +191,13 @@
                                                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                                                 </button>
                                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                                    <a href="">View</a>
-                                                                    <a href="">Edit</a>
-                                                                    <form action="" method="post">
+                                                                    <a type="button" data-bs-toggle='modal' data-bs-target="#projectTaskViewModal">
+                                                                        View
+                                                                    </a>
+                                                                    <a type="button" data-bs-toggle="modal" data-bs-target="#projectTaskEditModal">
+                                                                        Edit
+                                                                    </a>
+                                                                    <form action="{{ route('admin.projects-tasks.destroy', $task->id) }}" method="post">
                                                                         @csrf
                                                                         @method("delete")
                                                                         <button type="submit" class="confirm-delete-btn">Delete</button>
@@ -207,6 +211,150 @@
                                         </table>
                                     </div>
                                 </div>
+
+                                @if($projectTasks->isNotEmpty())
+                                    <div class="modal fade" id="projectTaskEditModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1>Edit Task {{ $task->title }}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('admin.projects-tasks.update', $task->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('put')
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Title *</label>
+                                                                <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}" required>
+                                                                @error('title')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="">Start Date *</label>
+                                                                <input type="date" name="start_date" id="start_date" value="{{ old('start_date', $task->start_date) }}" required>
+                                                                @error('start_date')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="">Due Date</label>
+                                                                <input type="date" name="due_date" id="date_date" value="{{ old('due_date', $task->due_date) }}">
+                                                                @error('due_date')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="">Project *</label>
+                                                                <select name="project_id" id="project_id">
+                                                                    @foreach($allProjects as $ap)
+                                                                        <option value="{{ $ap->id }}" @if($ap->id == $project->id) selected @endif>{{ $ap->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="">Priority</label>
+                                                                <select name="priority" id="priority">
+                                                                    @foreach(['low', 'medium', 'high', 'urgent'] as $priority)
+                                                                        @if($priority == $task->priority)
+                                                                            <option value="{{ $priority }}" selected>{{ ucfirst($priority) }}</option>
+                                                                        @else
+                                                                            <option value="{{ $priority }}">{{ ucfirst($priority) }}</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                                @error('priority')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Task Description</label>
+                                                                <textarea name="description" id="description" class='tinyEditor' cols="30" rows="10">{{ $task->description }}</textarea>
+                                                                @error('description')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Update Task</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="projectTaskViewModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title">{{ $task->title }}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                                </div>
+                                                <div class="modal-body w-100 d-block">
+                                                    <table class="table w-100 d-block">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><strong>#</strong></td>
+                                                            <td>{{ $task->id }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Title</strong></td>
+                                                            <td>{{ $task->title }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Start Date</strong></td>
+                                                            <td>{{ date('d/m/Y', strtotime($task->start_date)) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Due Date</strong></td>
+                                                            <td>
+                                                                @if($task->due_date != NULL)
+                                                                    {{ date('d/m/Y', strtotime($task->due_date)) }}
+                                                                @else
+                                                                    --
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Priority</strong></td>
+                                                            <td>{{ $task->priority }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Description</strong></td>
+                                                            <td>{!! $task->description !!}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Project</strong></td>
+                                                            <td>{{ $task->project->name }}</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
 
                                 <div class="modal fade" id="projectCreateTaskModal" tabindex="-1">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">

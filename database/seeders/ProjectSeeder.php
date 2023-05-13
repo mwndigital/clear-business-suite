@@ -25,6 +25,7 @@ class ProjectSeeder extends Seeder
             'estimated_hours' => '200',
             'start_date' => '2023-05-15',
             'description' => '<p>this is a testing project, this is the description for the testing project</p>',
+            'user_id' => '2',
             'created_at' => '2023-05-12 22:37:04',
             'updated_at' => '2023-05-12 22:37:04',
         ]);

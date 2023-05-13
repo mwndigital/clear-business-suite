@@ -9,6 +9,7 @@ use App\Models\Admin\AdminProject;
 use App\Models\Admin\ClientNote;
 use App\Models\Currencies;
 use App\Models\PaymentMethods;
+use App\Models\ProjectTasks;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserDetails;
@@ -105,6 +106,7 @@ class AdminClientController extends Controller
         $countries = CountryListFacade::getList('en');
         $currencies = Currencies::all();
         $clientProjects = AdminProject::where('user_id', $id)->get();
+
         return view('admin.pages.clients.show', compact('client', 'user_transactions', 'totalAmountIn', 'totalAmountOut', 'totalFees', 'balance', 'paymentMethods', 'clients', 'expenses', 'netIncome', 'clientNote', 'countries', 'currencies', 'clientProjects'));
     }
 
