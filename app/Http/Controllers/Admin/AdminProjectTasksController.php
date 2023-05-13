@@ -17,7 +17,9 @@ class AdminProjectTasksController extends Controller
      */
     public function index()
     {
-        //
+        $tasks = ProjectTasks::all();
+        $projects = AdminProject::all();
+        return view('admin.pages.projects.tasks.index', compact('tasks', 'projects'));
     }
 
     /**
@@ -27,7 +29,8 @@ class AdminProjectTasksController extends Controller
      */
     public function create()
     {
-        //
+        $projects = AdminProject::all();
+        return view('admin.pages.projects.tasks.create', compact('projects'));
     }
 
     /**

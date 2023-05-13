@@ -47,8 +47,24 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{{ route('admin.projects.index') }}">Projects</a>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Projects
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('admin.projects.index') }}">All Projects</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.projects.create') }}">Create Project</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.projects-tasks.index') }}">All Project Tasks</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.projects-tasks.create') }}">Create Project Task</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <ul class="list-inline additionalMenu">
