@@ -19522,6 +19522,19 @@ return jQuery;
 
 /***/ }),
 
+/***/ "./resources/assets/sass/loginpage.scss":
+/*!**********************************************!*\
+  !*** ./resources/assets/sass/loginpage.scss ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/assets/sass/app.scss":
 /*!****************************************!*\
   !*** ./resources/assets/sass/app.scss ***!
@@ -35362,7 +35375,8 @@ $.each( DataTable, function ( prop, val ) {
 /******/ 			"assets/css/lead": 0,
 /******/ 			"assets/css/client": 0,
 /******/ 			"assets/css/admin": 0,
-/******/ 			"assets/css/app": 0
+/******/ 			"assets/css/app": 0,
+/******/ 			"assets/css/loginpage": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -35412,12 +35426,13 @@ $.each( DataTable, function ( prop, val ) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app"], () => (__webpack_require__("./resources/assets/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app"], () => (__webpack_require__("./resources/assets/sass/admin.scss")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app"], () => (__webpack_require__("./resources/assets/sass/client.scss")))
-/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app"], () => (__webpack_require__("./resources/assets/sass/lead.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app"], () => (__webpack_require__("./resources/assets/sass/staff.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/sass/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/sass/client.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/sass/lead.scss")))
+/******/ 	__webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/sass/staff.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["assets/css/staff","assets/css/lead","assets/css/client","assets/css/admin","assets/css/app","assets/css/loginpage"], () => (__webpack_require__("./resources/assets/sass/loginpage.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

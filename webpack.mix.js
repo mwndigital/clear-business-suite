@@ -20,6 +20,7 @@ mix.js('resources/assets/js/app.js', 'public/assets/js')
     .sass('resources/assets/sass/client.scss', 'public/assets/css')
     .sass('resources/assets/sass/lead.scss', 'public/assets/css')
     .sass('resources/assets/sass/staff.scss', 'public/assets/css')
+    .sass('resources/assets/sass/loginpage.scss', 'public/assets/css')
     .copy(
         'node_modules/@fortawesome/fontawesome-free/webfonts',
         'public/assets/webfonts'

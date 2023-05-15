@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "ralBlack";
+  src: url(/fonts/Raleway-Black.ttf?03c5f5f5841a7e1c308d0a05ab31d4c8);
+}
+@font-face {
+  font-family: "ralExtraBold";
+  src: url(/fonts/Raleway-ExtraBold.ttf?6a689e13040bdcefd8923a948a4d4c4c);
+}
+@font-face {
+  font-family: "ralBold";
+  src: url(/fonts/Raleway-Bold.ttf?b430856ea5fc5c5168519d03cafd49c1);
+}
+@font-face {
+  font-family: "ralSemiBold";
+  src: url(/fonts/Raleway-SemiBold.ttf?b8a54fb018bb5a0d762cf3d8726d9be8);
+}
+@font-face {
+  font-family: "ralMedium";
+  src: url(/fonts/Raleway-Medium.ttf?10498e1dc3ccaf664c71800178cc9414);
+}
+@font-face {
+  font-family: "ralReg";
+  src: url(/fonts/Raleway-Regular.ttf?cedc82ec9fbfca66222a3124c7a5dd0f);
+}
+@font-face {
+  font-family: "ralLight";
+  src: url(/fonts/Raleway-Light.ttf?f86090a73e4996cf067ed8a18d575d42);
+}
+body {
+  background-color: #f3f3f3;
+}
+
+a.darkBlueBtn,
+button.darkBlueBtn,
+input.darkBlueBtn {
+  background-color: #003b73;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "ralSemiBold", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+a.darkBlueBtn:hover,
+button.darkBlueBtn:hover,
+input.darkBlueBtn:hover {
+  background-color: #0055a6;
+  border: 0;
+  box-shadow: none;
+  color: #ffffff;
+  outline: none;
+  text-decoration: none;
+}
+
+a.darkBlueBtnXl,
+button.darkBlueBtnXl,
+input.darkBlueBtnXl {
+  background-color: #003b73;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "ralSemiBold", sans-serif;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+a.darkBlueBtnXl:hover,
+button.darkBlueBtnXl:hover,
+input.darkBlueBtnXl:hover {
+  background-color: #0055a6;
+  border: 0;
+  box-shadow: none;
+  color: #ffffff;
+  outline: none;
+  text-decoration: none;
+}
+
+.loginMainPage {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.loginMainPage .content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.loginMainPage .content .loginCard {
+  border: 0;
+  padding: 3rem 2rem;
+}
+.loginMainPage .content .loginCard .card-header {
+  background-color: transparent;
+  border: 0;
+  color: #003b73;
+  font-family: "ralBold", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  padding: 0;
+  text-align: center;
+}
+.loginMainPage .content .loginCard .card-body {
+  background-color: transparent;
+  border: 0;
+}
+.loginMainPage .content .loginCard .card-body form .row {
+  margin-bottom: 30px;
+}
+.loginMainPage .content .loginCard .card-body form label {
+  color: #003b73;
+  font-family: "ralMedium", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.loginMainPage .content .loginCard .card-body form input[type=email],
+.loginMainPage .content .loginCard .card-body form input[type=password] {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #003b73;
+  border-radius: 0;
+  color: #003b73;
+  font-family: "ralReg", sans-serif;
+  font-size: 1rem;
+  height: 50px;
+  padding: 0.5rem;
+  transition: all 0.4s ease-in-out;
+}
+.loginMainPage .content .loginCard .card-body form input[type=email]:focus,
+.loginMainPage .content .loginCard .card-body form input[type=password]:focus {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #60a3d9;
+  box-shadow: none;
+  color: #003b73;
+  outline: none;
+  text-decoration: none;
+}
+.loginMainPage .content .loginCard .card-body form a {
+  color: #003b73;
+  font-family: "ralReg", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0;
+  transition: all 0.4s ease-in-out;
+}
+.loginMainPage .content .loginCard .card-body form a:hover {
+  box-shadow: none;
+  color: #60a3d9;
+  outline: none;
+}
+.loginMainPage .content .loginCard .card-body form button {
+  display: block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  width: 100%;
+}

@@ -18,13 +18,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
+                    <div class="whiteLinkBox"><a href="">General Settings</a></div>
+                </div>
+                <div class="col-md-3">
                     <div class="whiteLinkBox"><a href="{{ route('admin.activity.index') }}">Activity Log</a></div>
                 </div>
                 <div class="col-md-3">
-                    <div class="whiteLinkBox"><a href=""></a></div>
+                    <div class="whiteLinkBox"><a href="">Project Settings</a></div>
                 </div>
                 <div class="col-md-3">
-                    <div class="whiteLinkBox"><a href=""></a></div>
+                    <div class="whiteLinkBox"><a href="">Billing & Payment Settings</a></div>
                 </div>
                 <div class="col-md-3">
                     <div class="whiteLinkBox"><a href=""></a></div>

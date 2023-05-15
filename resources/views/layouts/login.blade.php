@@ -13,7 +13,7 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/loginpage.css') }}">
 
         @stack('page-styles')
 
@@ -21,9 +21,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-        <script src="{{ asset('assets/js/chart.js') }}"></script>
         <script src="{{ asset('assets/js/app.js') }}"></script>
-        <script src="{{ asset('assets/js/admin.js') }}"></script>
 
         <x-head.tinymce-config/>
 
@@ -32,11 +30,13 @@
     </head>
     <body>
         <div id="app">
-            <header class="fixed-top">
-                @include('admin.layouts.partials.mainMenu')
-            </header>
-            @include('sweetalert::alert')
             <div class="container-fluid">
                 <div class="row">
                     <main class="main">
-
+                        @yield('content')
+                    </main>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

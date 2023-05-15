@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use App\Models\ProjectMilestone;
 use App\Models\ProjectNotes;
 use App\Models\ProjectTasks;
 use App\Models\User;
@@ -35,8 +36,10 @@ class AdminProject extends Model
     public function tasks() {
         return $this->hasMany(ProjectTasks::class);
     }
-
     public function notes() {
         return $this->hasMany(ProjectNotes::class);
+    }
+    public function milestones(){
+        return $this->hasMany(ProjectMilestone::class);
     }
 }

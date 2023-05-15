@@ -9,6 +9,7 @@ use App\Models\Admin\ProjectBillingType;
 use App\Models\Admin\ProjectStatus;
 use App\Models\Admin\ProjectType;
 use App\Models\PaymentMethods;
+use App\Models\ProjectMilestone;
 use App\Models\ProjectNotes;
 use App\Models\ProjectTasks;
 use App\Models\User;
@@ -83,7 +84,8 @@ class AdminProjectController extends Controller
         $allProjects = AdminProject::all();
         $projectTasks = ProjectTasks::where('project_id', $id)->get();
         $projectNotes = ProjectNotes::where('project_id', $id)->get();
-        return view('admin.pages.projects.show', compact('project', 'allProjects', 'projectTasks', 'projectNotes'));
+        $projectMilestones = ProjectMilestone::where('project_id', $id)->get();
+        return view('admin.pages.projects.show', compact('project', 'allProjects', 'projectTasks', 'projectNotes', 'projectMilestones'));
     }
 
     /**

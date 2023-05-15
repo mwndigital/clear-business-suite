@@ -70,6 +70,9 @@
                         <li>
                             <a href="{{ route('admin.projects-notes.create') }}">Add Project Note</a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.projects-milestones.index') }}">All Project Milestones</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
