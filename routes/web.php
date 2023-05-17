@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminProjectNotesController;
 use App\Http\Controllers\Admin\AdminProjectTasksController;
 use App\Http\Controllers\Admin\AdminSettingsController;
 use App\Http\Controllers\Admin\AdminTransactionController;
+use App\Http\Controllers\Admin\ProjectTimeTrackingController;
 use App\Http\Controllers\Client\ClientIndexController;
 use App\Http\Controllers\Lead\LeadIndexController;
 use App\Http\Controllers\PasswordGenerateController;
@@ -54,6 +55,7 @@ Route::middleware(['auth', 'role:super admin|admin'])->name('admin.')->prefix('a
     Route::resource('projects-tasks', AdminProjectTasksController::class);
     Route::resource('projects-notes', AdminProjectNotesController::class);
     Route::resource('projects-milestones', AdminProjectMilestoneController::class);
+    Route::resource('projects-time-tracking', ProjectTimeTrackingController::class);
 
 
     //Settings

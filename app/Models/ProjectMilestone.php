@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Admin\AdminProject;
+use App\Models\Admin\ProjectTimeTracking;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,5 +21,8 @@ class ProjectMilestone extends Model
 
     public function project(){
         return $this->belongsTo(AdminProject::class);
+    }
+    public function timeTracking(){
+        return $this->hasMany(ProjectTimeTracking::class);
     }
 }

@@ -42,4 +42,7 @@ class AdminProject extends Model
     public function milestones(){
         return $this->hasMany(ProjectMilestone::class);
     }
+    public function timeTracking() {
+        return $this->hasMany(ProjectTimeTracking::class);
+    }
 }

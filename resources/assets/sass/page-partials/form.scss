@@ -21,6 +21,7 @@ form {
         input[type='date'],
         input[type='datetime'],
         input[type='datetime-local'],
+        input[type='time'],
         select {
             background-color: $w !important;
             border: 1px solid $darkBlue;
@@ -42,6 +43,7 @@ form {
     input[type='date'],
     input[type='datetime'],
     input[type='datetime-local'],
+    input[type='time'],
     select {
         background-color: $w;
         border: 1px solid $darkBlue;
@@ -57,5 +59,17 @@ form {
     input:read-only {
         background-color: lighten($b, 80%);
         cursor: not-allowed;
+    }
+    .form-check {
+        display: block;
+        width: 100%;
+        label {
+            display: inline-block;
+            font-family: $ralReg;
+            font-size: 1rem;
+            margin: 0;
+            width: auto;
+
+        }
     }
 }

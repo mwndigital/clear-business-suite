@@ -21414,6 +21414,7 @@ main.main {
 .pageMain form .input-group input[type=date],
 .pageMain form .input-group input[type=datetime],
 .pageMain form .input-group input[type=datetime-local],
+.pageMain form .input-group input[type=time],
 .pageMain form .input-group select {
   background-color: #ffffff !important;
   border: 1px solid #003b73;
@@ -21434,6 +21435,7 @@ main.main {
 .pageMain form input[type=date],
 .pageMain form input[type=datetime],
 .pageMain form input[type=datetime-local],
+.pageMain form input[type=time],
 .pageMain form select {
   background-color: #ffffff;
   border: 1px solid #003b73;
@@ -21453,6 +21455,17 @@ main.main {
 .pageMain form input:read-only {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+.pageMain form .form-check {
+  display: block;
+  width: 100%;
+}
+.pageMain form .form-check label {
+  display: inline-block;
+  font-family: "ralReg", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  width: auto;
 }
 .pageMain .dataTables_wrapper {
   min-height: 500px;

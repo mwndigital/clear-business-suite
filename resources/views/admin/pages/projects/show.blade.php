@@ -39,6 +39,8 @@
                             <a href="#tasksTab" class="" data-bs-toggle="list" role="tab">Tasks</a>
                             <a href="#milestonesTab" class="" data-bs-toggle="list" role="tab">Milestones</a>
                             <a href="#notesTab" class="" data-bs-toggle="list" role="tab">Notes</a>
+                            <a href="#timeTrackingTab" data-bs-toggle="list" role="tab">Time Tracking</a>
+                            <a href="#messagesTab" data-bs-toggle="list" role="tab">Messages</a>
                             <a href="#filesTab" class="" data-bs-toggle="list" role="tab">Files</a>
                         </div>
                         <div class="tab-content">
@@ -904,6 +906,193 @@
                                     </div>
                                 @endif
                             </div>
+                            <div class="tab-pane" id="timeTrackingTab" role="tabpanel">
+                                <div class="row mb-4">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#projectTrackTimeModal">
+                                            Track Time
+                                        </button>
+                                        <div class="modal fade" id="projectTrackTimeModal" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title">Track Time</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('admin.projects-time-tracking.store') }}" method="POST">
+                                                            @csrf
+                                                            <div class="row">
+                                                                <div class="col-12"><label for="">Related To:</label></div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="checkbox" name="milestone" id="milestoneCB">
+                                                                        <label for="">Milestone</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="checkbox" name="tasks" id="taskCB">
+                                                                        <label for="">Task</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row taskRow" style="display: none;">
+                                                                <div class="col-12">
+                                                                    <label for="">Related Task</label>
+                                                                    <select name="task_id" id="task_id">
+                                                                        @foreach($projectTasks as $task)
+                                                                            <option value="{{ $task->id }}">{{ $task->title }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('task_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row milestoneRow" style="display: none;">
+                                                                <div class="col-12">
+                                                                    <label for="">Related Milestone</label>
+                                                                    <select name="milestone_id" id="milestone_id">
+                                                                        @foreach($projectMilestones as $milestone)
+                                                                            <option value="{{ $milestone->id }}">{{ $milestone->title }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('milestone_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row projectRow" style="display: none;">
+                                                                <div class="col-md-6">
+                                                                    <input type="text" name="project_id" id="project_id" value="{{ $project->id }}">
+                                                                    @error('project_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" name="client_id" id="client_id" value="{{ $project->user_id }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="row dateTimeInputRow">
+                                                                <div class="col-md-6">
+                                                                    <label for="">Start Time</label>
+                                                                    <input type="time" name="start_time" id="start_time" value="{{ old('start_time') }}">
+                                                                    @error('start_time')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="">End Time</label>
+                                                                    <input type="time" name="end_time" id="end_time" value="{{ old('end_time') }}">
+                                                                    @error('end_time')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row inputTimeRow" style="display: none;">
+                                                                <div class="col-12">
+                                                                    <label for="">Time Spent</label>
+                                                                    <input type="text" name="time_spent" id="time_spent" value='{{ old('time_spent') }}' placeholder="HH:MM">
+                                                                    @error('time_spent')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <a href=""  class="durationStartEndToggle">
+                                                                        Enter time duration instead
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Notes</label>
+                                                                    <textarea name="notes" id="notes" class="tinyEditor" cols="30"
+                                                                              rows="10">{{ old('notes') }}</textarea>
+                                                                    @error('notes')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <button type="submit" class="btn btn-primary btn-lg">Add Time</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="table table-hover dataTablesTable rowLinks">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Start Date & Time</th>
+                                        <th>End Date & Time</th>
+                                        <th>Total Hours</th>
+                                        <th>Billed</th>
+                                        <th>Added</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($timeTracking as $tt)
+                                        <tr>
+                                            <td>{{ $tt->id }}</td>
+                                            <td>{{ date('H:i', strtotime($tt->start_time)) }}</td>
+                                            <td>{{ date('H:i', strtotime($tt->end_time)) }}</td>
+                                            <td>{{ $tt->total }}</td>
+                                            <td>
+                                                @if($tt->billed == 0)
+                                                    <i class="fa-solid fa-circle-xmark text-danger"></i>
+                                                @else
+                                                    <i class="fa-solid fa-circle-check text-success"></i>
+                                                @endif
+                                            </td>
+                                            <td>{{ date('d/m/Y', strtotime($tt->created_at)) }}</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <a href="">View</a>
+                                                        <a href="">Edit</a>
+                                                        <form action="" method="post">
+                                                            @csrf
+                                                            @method("delete")
+                                                            <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="messagesTab" role="tabpanel">
+                                Messages
+                            </div>
                             <div class="tab-pane" id="filesTab" role="tabpanel">
                                 Files
                             </div>
@@ -913,4 +1102,43 @@
             </div>
         </div>
     </section>
+
+    <script>
+
+        $(document).ready(function(){
+            $('.durationStartEndToggle').click(function(event){
+                event.preventDefault();
+
+                $('.dateTimeInputRow').toggle();
+                $('.inputTimeRow').toggle();
+
+                var toggleText = $(this).text().trim();
+                var newText = (toggleText === 'Enter time duration instead') ? 'Set start and end time instead' : 'Enter time duration instead';
+
+                $(this).text(newText);
+            });
+            $('#milestoneCB').on('change', function(){
+               if($(this).is(':checked')){
+                   $('.milestoneRow').show();
+               }
+               else {
+                   $('.milestoneRow').hide();
+               }
+            });
+            $('#taskCB').on('change', function(){
+                if($(this).is(':checked')){
+                    $('.taskRow').show();
+                }
+                else {
+                    $('.taskRow').hide();
+                }
+            });
+
+            $('.clockpicker').clockpicker({
+                placement: 'bottom',
+                align: 'left',
+                donetext: 'Done'
+            });
+        });
+    </script>
 @endsection

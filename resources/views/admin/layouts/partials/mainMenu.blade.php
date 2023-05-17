@@ -76,6 +76,12 @@
                         <li>
                             <a href="{{ route('admin.projects-milestones.create') }}">Add Project Milestone</a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.projects-time-tracking.index') }}">All Project Time Tracking</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.projects-time-tracking.create') }}">Track time on project</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
