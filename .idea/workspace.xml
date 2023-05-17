@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="67f4e0c1-d156-49b2-bdcc-9b36a5723dd5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProjectMilestoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProjectMilestoneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/projects/milestones/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/projects/milestones/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/projects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/projects/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/mainMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/mainMenu.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +187,7 @@
       <workItem from="1683384866692" duration="18280000" />
       <workItem from="1683499057738" duration="8513000" />
       <workItem from="1683576296871" duration="29338000" />
-      <workItem from="1683843087635" duration="39308000" />
+      <workItem from="1683843087635" duration="39545000" />
     </task>
     <servers />
   </component>

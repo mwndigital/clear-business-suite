@@ -73,6 +73,9 @@
                         <li>
                             <a href="{{ route('admin.projects-milestones.index') }}">All Project Milestones</a>
                         </li>
+                        <li>
+                            <a href="{{ route('admin.projects-milestones.create') }}">Add Project Milestone</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
