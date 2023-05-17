@@ -56,8 +56,8 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <a href="{{ route('admin.projects-milestones.show', $milestone->id) }}">View</a>
-                                                    <a href="">Edit</a>
-                                                    <form action="" method="post">
+                                                    <a href="{{ route('admin.projects-milestones.edit', $milestone->id) }}">Edit</a>
+                                                    <form action="{{ route('admin.projects-milestones.destroy', $milestone->id) }}" method="post">
                                                         @csrf
                                                         @method("delete")
                                                         <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>

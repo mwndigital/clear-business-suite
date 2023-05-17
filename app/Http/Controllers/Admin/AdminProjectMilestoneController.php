@@ -73,7 +73,9 @@ class AdminProjectMilestoneController extends Controller
      */
     public function edit($id)
     {
-        //
+        $milestone = ProjectMilestone::find($id);
+        $projects = AdminProject::all();
+        return view('admin.pages.projects.milestones.edit', compact('milestone', 'projects'));
     }
 
     /**
@@ -83,9 +85,19 @@ class AdminProjectMilestoneController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectMilestoneStoreRequest $request, $id)
     {
-        //
+        $milestone = ProjectMilestone::find($id);
+        $milestone->name = $request->name;
+        $milestone->start_date = $request->start_date;
+        $milestone->due_date = $request->due_date;
+        $milestone->description = $request->input('description');
+        $milestone->project_id = $request->project_id;
+        $milestone->save();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has updated Project Milestone ' . $request->name . ' for Project #' .$request->project_id );
+        return redirect()->back()->with('success', 'Project Milestone updated successfully');
+
     }
 
     /**
@@ -96,6 +108,10 @@ class AdminProjectMilestoneController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $milestone = ProjectMilestone::find($id);
+        $milestone->delete();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has deleted a project milestone');
+        return redirect()->back()->with('success', 'Milestone deleted successfully');
     }
 }

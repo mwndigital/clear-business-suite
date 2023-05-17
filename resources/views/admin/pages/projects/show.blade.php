@@ -476,9 +476,13 @@
                                                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                                                             </button>
                                                             <div class="dropdown-menu dropdown-menu-end">
-                                                                <a href="">View</a>
-                                                                <a href="">Edit</a>
-                                                                <form action="" method="post">
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target="#projectMilestonesViewModal">
+                                                                    View
+                                                                </button>
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target="#projectMilestonesEditModal">
+                                                                    Edit
+                                                                </button>
+                                                                <form action="{{ route('admin.projects-milestones.destroy', $milestone->id) }}" method="post">
                                                                     @csrf
                                                                     @method("delete")
                                                                     <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
@@ -492,7 +496,116 @@
                                         </table>
                                     </div>
                                 </div>
-
+                                @if($projectMilestones->isNotEmpty())
+                                    <div class="modal fade" id="projectMilestonesViewModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title">Create Milestone</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-responsive w-100 d-block d-md-table">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><strong>#</strong></td>
+                                                            <td>{{ $milestone->id }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Name</strong></td>
+                                                            <td>{{ $milestone->name }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Start Date</strong></td>
+                                                            <td>{{ date('d/m/Y', strtotime($milestone->start_date)) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Due Date</strong></td>
+                                                            <td>{{ date('d/m/Y', strtotime($milestone->due_date)) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Description</strong></td>
+                                                            <td>{!! $milestone->description !!}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Project</strong></td>
+                                                            <td><a href="{{ route('admin.projects.show', $milestone->project->id) }}">{{ $milestone->project->name }}</a></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="projectMilestonesEditModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title">Create Milestone</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('admin.projects-milestones.update', $milestone->id) }}" method="post">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Name *</label>
+                                                                <input type="text" name="name" id="name" value="{{ old('name', $milestone->name) }}" required>
+                                                                @error('name')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <label for="">Start Date *</label>
+                                                                <input type="date" name="start_date" id="start_date" value="{{ old('start_date', $milestone->start_date) }}" required>
+                                                                @error('start_date')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <label for="">Due Date *</label>
+                                                                <input type="date" name="due_date" id="due_date" value="{{ old('due_date', $milestone->due_date) }}" required>
+                                                                @error('due_date')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Description</label>
+                                                                <textarea name="description" id="description" class="tinyEditor" cols="30" rows="10">{{ old('description', $milestone->description) }}</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Project *</label>
+                                                                <select name="project_id" id="project_id" required>
+                                                                    @foreach($allProjects as $project)
+                                                                        <option value="{{ $project->id }}" @if($project->id == $milestone->project_id) selected @endif>{{ $project->name }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="modal fade" id="projectMilestonesCreateModal" tabindex="-1">
                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                                         <div class="modal-content">
