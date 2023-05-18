@@ -1075,13 +1075,19 @@
                                                         <i class="fa-solid fa-ellipsis-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
-                                                        <a href="">View</a>
-                                                        <a href="">Edit</a>
-                                                        <form action="" method="post">
-                                                            @csrf
-                                                            @method("delete")
-                                                            <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
-                                                        </form>
+                                                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#projectTimeTrackingViewModal">
+                                                            View
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#projectTimeTrackingEditModal">
+                                                            Edit
+                                                        </button>
+                                                        @role('super admin')
+                                                            <form action="{{ route('admin.projects-time-tracking.destroy', $tt->id) }}" method="post">
+                                                                @csrf
+                                                                @method("delete")
+                                                                <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
+                                                            </form>
+                                                        @endrole
                                                     </div>
                                                 </div>
                                             </td>
@@ -1089,6 +1095,228 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+                                @if($timeTracking->isNotEmpty())
+                                    <div class="modal fade" id="projectTimeTrackingViewModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title">View Time Tracked #{{ $tt->id }}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table table-responsive w-100 d-block d-md-table">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td><strong>#</strong></td>
+                                                            <td>{{ $tt->id }}</td>
+                                                        </tr>
+                                                        @if($tt->project_id != NULL)
+                                                            <tr>
+                                                                <td><strong>Project</strong></td>
+                                                                <td>{{ $tt->project->name }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        @if($tt->task_id != NULL)
+                                                            <tr>
+                                                                <td><strong>Task</strong></td>
+                                                                <td>{{ $tt->task->title }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        @if($tt->milestone_id != NULL)
+                                                            <tr>
+                                                                <td><strong>Milestone</strong></td>
+                                                                <td>{{ $tt->milestone->title }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        <tr>
+                                                            <td><strong>Assigned Staff Member</strong></td>
+                                                            <td>{{ $tt->staff->first_name }} {{ $tt->staff->last_name }}</td>
+                                                        </tr>
+                                                        @if($tt->client_id != NULL)
+                                                            <tr>
+                                                                <td><strong>Related Client</strong></td>
+                                                                <td>{{ $tt->client->first_name }} {{ $tt->client->last_name }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        @if($tt->start_time != NULL)
+                                                            <tr>
+                                                                <td><strong>Start Time</strong></td>
+                                                                <td>{{ $tt->start_time }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        @if($tt->end_time != NULL)
+                                                            <tr>
+                                                                <td><strong>End Time</strong></td>
+                                                                <td>{{ $tt->end_time }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        @if($tt->time_spent != NULL)
+                                                            <tr>
+                                                                <td><strong>Time Spent</strong></td>
+                                                                <td>{{ $tt->time_spent }}</td>
+                                                            </tr>
+                                                        @endif
+                                                        @if($tt->notes != NULL)
+                                                            <tr>
+                                                                <td><strong>Notes</strong></td>
+                                                                <td>{!! $tt->notes !!}</td>
+                                                            </tr>
+                                                        @endif
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="projectTimeTrackingEditModal" tabindex="-1">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title">Edit Tracked Time - #{{ $tt->id }}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('admin.projects-time-tracking.update', $tt->id) }}" method="POST">
+                                                        @csrf
+                                                        @method("PUT")
+                                                        @if($tt->project_id != NULL)
+                                                            <div class="row projectsRow">
+                                                                <div class="col-12">
+                                                                    <label for="">Related Project</label>
+                                                                    <select name="project_id" id="project_id">
+                                                                        <option selected disabled>Select a project</option>
+                                                                        @foreach($allProjects as $project)
+                                                                            <option value="{{ $project->id }}" @if($project->id == $tt->project_id) selected @endif>{{ $project->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('project_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                        @if($tt->task_id != NULL)
+                                                            <div class="row taskRow" >
+                                                                <div class="col-12">
+                                                                    <label for="">Related Task</label>
+                                                                    <select name="task_id" id="task_id">
+                                                                        <option selected disabled>Select a task</option>
+                                                                        @foreach($projectTasks as $task)
+                                                                            <option value="{{ $task->id }}" @if($task->id == $timeTracking->task_id) selected @endif>{{ $task->title }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('task_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                        @if($tt->milestone_id != NULL)
+                                                            <div class="row milestoneRow">
+                                                                <div class="col-12">
+                                                                    <label for="">Related Milestone</label>
+                                                                    <select name="milestone_id" id="milestone_id">
+                                                                        <option selected disabled>Select a milestone</option>
+                                                                        @foreach($projectMilestones as $milestone)
+                                                                            <option value="{{ $milestone->id }}" @if($milestone->id == $project->mileston_id) selected @endif>{{ $milestone->title }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                    @error('milestone_id')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                        @if($tt->client_id != NULL)
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <label for="">Client</label>
+                                                                    <select name="client_id" id="client_id">
+                                                                        <option selected disabled>Please select a client</option>
+                                                                        @foreach($clients as $client)
+                                                                            <option value="{{ $client->id }}" @if($tt->client_id == $client->id) selected @endif>{{ $client->first_name }} {{ $client->last_name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+
+                                                        <div class="row dateTimeInputRow">
+                                                            @if($tt->start_time != NULL)
+                                                                <div class="col-md-6">
+                                                                    <label for="">Start Time</label>
+                                                                    <input type="time" name="start_time" id="start_time" value="{{ old('start_time', $tt->start_time) }}">
+                                                                    @error('start_time')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            @endif
+                                                            @if($tt->end_time != NULL)
+                                                                <div class="col-md-6">
+                                                                    <label for="">End Time</label>
+                                                                    <input type="time" name="end_time" id="end_time" value="{{ old('end_time', $tt->endTime) }}">
+                                                                    @error('end_time')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            @endif
+                                                        </div>
+                                                        @if($tt->time_spent != NULL)
+                                                            <div class="row inputTimeRow" >
+                                                                <div class="col-12">
+                                                                    <label for="">Time Spent</label>
+                                                                    <input type="text" name="time_spent" id="time_spent" value='{{ old('time_spent', $tt->time_spent) }}' placeholder="HH:MM">
+                                                                    @error('time_spent')
+                                                                    <div class="text-danger">
+                                                                        {{ $message }}
+                                                                    </div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                        @endif
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Notes</label>
+                                                                <textarea name="notes" id="notes" class="tinyEditor" cols="30"
+                                                                          rows="10">{{ old('notes', $tt->notes) }}</textarea>
+                                                                @error('notes')
+                                                                <div class="text-danger">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <label for="">Has this been billed?</label>
+                                                                <select name="billed" id="billed">
+                                                                    <option value="0" @if($tt->billed == 0) selected @endif>No</option>
+                                                                    <option value="1" @if($tt->billed == 1) selected @endif>Yes</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                             <div class="tab-pane" id="messagesTab" role="tabpanel">
                                 Messages

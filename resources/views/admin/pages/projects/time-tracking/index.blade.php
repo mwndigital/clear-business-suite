@@ -120,13 +120,15 @@
                                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-end">
-                                                    <a href="">View</a>
-                                                    <a href="">Edit</a>
-                                                    <form action="" method="post">
-                                                        @csrf
-                                                        @method("delete")
-                                                        <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
-                                                    </form>
+                                                    <a href="{{ route('admin.projects-time-tracking.show', $tt->id) }}">View</a>
+                                                    <a href="{{ route('admin.projects-time-tracking.edit', $tt->id) }}">Edit</a>
+                                                    @role('super admin')
+                                                        <form action="{{ route('admin.projects-time-tracking.destroy', $tt->id) }}" method="post">
+                                                            @csrf
+                                                            @method("delete")
+                                                            <button type="submit" class="confirm-delete-btn btn btn-danger">Delete</button>
+                                                        </form>
+                                                    @endrole
                                                 </div>
                                             </div>
                                         </td>

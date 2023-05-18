@@ -7,15 +7,9 @@
     <list default="true" id="67f4e0c1-d156-49b2-bdcc-9b36a5723dd5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminProjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/AdminProject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/AdminProject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProjectMilestone.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProjectMilestone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProjectTasks.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProjectTasks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/sass/page-partials/form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/sass/page-partials/form.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/partials/mainMenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/mainMenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectTimeTrackingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectTimeTrackingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/projects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/projects/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pages/projects/time-tracking/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pages/projects/time-tracking/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +191,7 @@
       <workItem from="1683499057738" duration="8513000" />
       <workItem from="1683576296871" duration="29338000" />
       <workItem from="1683843087635" duration="54664000" />
-      <workItem from="1684350498034" duration="7775000" />
+      <workItem from="1684350498034" duration="13621000" />
     </task>
     <servers />
   </component>

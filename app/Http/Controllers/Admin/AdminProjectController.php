@@ -87,7 +87,8 @@ class AdminProjectController extends Controller
         $projectNotes = ProjectNotes::where('project_id', $id)->get();
         $projectMilestones = ProjectMilestone::where('project_id', $id)->get();
         $timeTracking = ProjectTimeTracking::where('project_id', $id)->get();
-        return view('admin.pages.projects.show', compact('project', 'allProjects', 'projectTasks', 'projectNotes', 'projectMilestones', 'timeTracking'));
+        $clients = User::role('client')->get();
+        return view('admin.pages.projects.show', compact('project', 'allProjects', 'projectTasks', 'projectNotes', 'projectMilestones', 'timeTracking', 'clients'));
     }
 
     /**

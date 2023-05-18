@@ -11,6 +11,7 @@ use App\Models\User;
 use App\Models\Admin\ProjectTimeTracking;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 class ProjectTimeTrackingController extends Controller
 {
@@ -137,7 +138,9 @@ class ProjectTimeTrackingController extends Controller
      */
     public function show($id)
     {
-        //
+        $timeTracking = ProjectTimeTracking::find($id);
+
+        return view('admin.pages.projects.time-tracking.show', compact('timeTracking'));
     }
 
     /**
@@ -148,7 +151,12 @@ class ProjectTimeTrackingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $timeTracking = ProjectTimeTracking::find($id);
+        $projectTasks = ProjectTasks::all();
+        $projectMilestones = ProjectMilestone::all();
+        $projects = AdminProject::all();
+        $clients = User::role('client')->get();
+        return view('admin.pages.projects.time-tracking.edit', compact('timeTracking', 'projectTasks', 'projectMilestones', 'projects', 'clients'));
     }
 
     /**
@@ -160,7 +168,35 @@ class ProjectTimeTrackingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $totalTime = '';
+
+        if ($request->filled('start_time') && $request->filled('end_time')) {
+            $startDateTime = Carbon::createFromFormat('H:i', $request->input('start_time'));
+            $endDateTime = Carbon::createFromFormat('H:i', $request->input('end_time'));
+            $duration = $endDateTime->diff($startDateTime);
+            $hours = $duration->format('%H');
+            $minutes = $duration->format('%I');
+            $totalTime = $hours . ':' . $minutes;
+        }
+        elseif($request->filled('time_spent')){
+            $totalTime = $request->input('time_spent');
+        }
+
+        $timeTracking = ProjectTimeTracking::find($id);
+        $timeTracking->project_id = $request->input('project_id');
+        $timeTracking->task_id = $request->input('task_id');
+        $timeTracking->milestone_id = $request->input('milestone_id');
+        $timeTracking->client_id = $request->input('client_id');
+        $timeTracking->start_time = $request->input('start_time');
+        $timeTracking->end_time = $request->input('end_time');
+        $timeTracking->time_spent = $request->input('time_spent');
+        $timeTracking->total = $totalTime;
+        $timeTracking->notes = $request->input('notes');
+        $timeTracking->billed = $request->input('billed');
+        $timeTracking->save();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has edited time tracked for #' . $timeTracking->id);
+        return redirect()->back()->with('success', 'Tracked time has been updated successfully');
     }
 
     /**
@@ -171,6 +207,10 @@ class ProjectTimeTrackingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $timeTracking = ProjectTimeTracking::find($id);
+        $timeTracking->delete();
+
+        activity()->log(auth()->user()->first_name . ' ' . auth()->user()->last_name . ' has deleted tracked time with ID #' . $timeTracking->id);
+        return redirect('admin/projects-time-tracking')->with('success', 'Tracked time deleted successfully');
     }
 }
